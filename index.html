@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=no">
-	<title>vw-calculate</title>
+	<title>px turn vw</title>
 </head>
 <body>
 	<style>
@@ -13,16 +13,57 @@
 	    .input{padding:12px 0;}
 	    input{width:100%;height:50px;font-size:32px;color:purple;}
 	    .btn{background:purple;color:#fff;height:50px;display:flex;justify-content:center;align-items:center;font-size:20px;cursor:pointer;}
+	    .list{}
+	    .item{background:#07c160;color:#fff;display:flex;justify-content:space-between;align-items:center;height:44px;font-size:16px;padding:0 12px;margin-bottom:1px;}
 	</style>
-	<div class="over">结果：<span class="over_num">0</span> vw</div>
-	<div class="input"><input type="number" placeholder="请输入数字"></div>
+	<div id="app">
+		<div class="over">结果：<span class="over_num" v-text="vwVal"></span> vw</div>
+		<div class="input"><input type="number" placeholder="请输入数字" v-model="inputVal"></div>
+		<div class="list">
+			<div class="item" v-for="(item,index) in arr" v-key="index">
+				<div v-text="item.from"></div>
+				<div v-text="item.to"></div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 	<script>
-	    const oNum=document.querySelector('.over_num')
-	    const oInput=document.querySelector('input')
-	    oInput.onkeyup=function(){
-	        const rtn=(oInput.value/375)*100;
-	        oNum.innerHTML=rtn;
-	    }
+		new Vue({
+			el:'#app',
+			data:{
+				inputVal:'',
+				maxVal:100,
+				arr:[],
+			},
+			methods:{
+				onVw(val){
+					return (val/375*100).toFixed(2);
+				},
+				onList(){
+					const {maxVal}=this;
+					const arr=[];
+					const begin=[1,2,4,6,8,12,14,16,18,20,14,28,32,40,48];
+					begin.forEach(item=>{
+						const to=this.onVw(item);
+						const obj={
+							from:item,
+							to,
+						};
+						arr.push(obj);
+					})
+					this.arr=arr;
+				},
+			},
+			computed:{
+				vwVal(){
+					const {inputVal}=this;
+					return (inputVal/375*100).toFixed(2);
+				},
+			},
+			created(){
+				this.onList();
+			},
+		})
 	</script>
 </body>
 </html>
