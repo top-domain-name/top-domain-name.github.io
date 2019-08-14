@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>farm</title>
+</head>
+<body>
+	<style>
+		*{margin:0;padding:0;}
+		.farm_box{display:flex;flex-wrap:wrap;padding:1.5vw;width:100vw;box-sizing:border-box;}
+		.farm_item{width:16.4vw;height:16.4vw;margin:1.5vw;}
+		.farm_icon{background:no-repeat center;background-size:contain;border:solid 1px rgba(0,0,0,.04);box-sizing:border-box;}
+	</style>
+	<div id="app">
+		<div class="farm_box">
+			<div class="farm_item farm_icon" :style="`background-image:url(./farm/${i}.png);`" v-for="i in 50" v-key="i"></div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script>
+		new Vue({
+			el:'#app',
+		})
+	</script>
+</body>
+</html>
