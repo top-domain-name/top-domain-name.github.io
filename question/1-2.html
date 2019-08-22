@@ -14,6 +14,9 @@
 			.collapse {
 			    visibility: collapse
 			}
+			.collapse2 {
+			    visibility: hidden
+			}
 			.none{display:none;}
 		</style>
 		<div class="farm_title">完整table</div>
@@ -52,6 +55,24 @@
             <td>第三行-3</td>
         </tr>
     </table>
+    		<div class="farm_title">visibility: hidden</div>
+        <table border="1">
+            <tr>
+                <td>第一行-1</td>
+                <td class="collapse2">第一行-2</td>
+                <td>第一行-3</td>
+            </tr>
+            <tr class="collapse2">
+                <td>第二行-1</td>
+                <td>第二行-2</td>
+                <td>第二行-3</td>
+            </tr>
+            <tr>
+                <td>第三行-1</td>
+                <td>第三行-2</td>
+                <td>第三行-3</td>
+            </tr>
+        </table>
     <div class="farm_title">hidden</div>
     <table border="1">
         <tr>
