@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>visibility</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+		<style>
+			.collapse {
+			    visibility: collapse
+			}
+			.none{display:none;}
+		</style>
+		<div class="farm_title">完整table</div>
+		<table border="1">
+		    <tr>
+		        <td>第一行-1</td>
+		        <td>第一行-2</td>
+		        <td>第一行-3</td>
+		    </tr>
+		    <tr>
+		        <td>第二行-1</td>
+		        <td>第二行-2</td>
+		        <td>第二行-3</td>
+		    </tr>
+		    <tr>
+		        <td>第三行-1</td>
+		        <td>第三行-2</td>
+		        <td>第三行-3</td>
+		    </tr>
+		</table>
+		<div class="farm_title">visibility: collapse</div>
+    <table border="1">
+        <tr>
+            <td>第一行-1</td>
+            <td class="collapse">第一行-2</td>
+            <td>第一行-3</td>
+        </tr>
+        <tr class="collapse">
+            <td>第二行-1</td>
+            <td>第二行-2</td>
+            <td>第二行-3</td>
+        </tr>
+        <tr>
+            <td>第三行-1</td>
+            <td>第三行-2</td>
+            <td>第三行-3</td>
+        </tr>
+    </table>
+    <div class="farm_title">hidden</div>
+    <table border="1">
+        <tr>
+            <td>第一行-1</td>
+            <td hidden="">第一行-2</td>
+            <td>第一行-3</td>
+        </tr>
+        <tr hidden="">
+            <td>第二行-1</td>
+            <td>第二行-2</td>
+            <td>第二行-3</td>
+        </tr>
+        <tr>
+            <td>第三行-1</td>
+            <td>第三行-2</td>
+            <td>第三行-3</td>
+        </tr>
+    </table>
+    <div class="farm_title">display:none</div>
+    <table border="1">
+        <tr>
+            <td>第一行-1</td>
+            <td class="none">第一行-2</td>
+            <td>第一行-3</td>
+        </tr>
+        <tr class="none">
+            <td>第二行-1</td>
+            <td>第二行-2</td>
+            <td>第二行-3</td>
+        </tr>
+        <tr>
+            <td>第三行-1</td>
+            <td>第三行-2</td>
+            <td>第三行-3</td>
+        </tr>
+    </table>
+</body>
+
+</html>
