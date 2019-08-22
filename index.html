@@ -39,7 +39,9 @@
 			},
 			methods:{
 				onVw(val){
-					return (val/375*100).toFixed(2);
+					const r=val/375*100
+					console.log(`${val}=>${r}`)
+					return r.toFixed(2);
 				},
 				onList(){
 					const {maxVal}=this;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>每日一题</title>
+</head>
+
+<body>
+    <style>
+    	.sprite_box{display:flex;flex-wrap:wrap;padding:1.5vw;width:100vw;box-sizing:border-box}
+    	.sprite_item{width:16.4vw;height:16.4vw;margin:1.5vw;background:red url(images/sprite.png) no-repeat center;background-size:196.8vw 32.8vw;}
+    </style>
+    <div id="app">
+        <div class="sprite_box">
+            <div class="sprite_item" v-for="i in 17" :style="`background-position:${onPosition(i-1).x}vw ${onPosition(i-1).y}vw;`"></div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            positions: [{
+                x: 0,
+                y: 0,
+            },{
+            	x: -16.8,
+            	y: 0,
+            }]
+        },
+        methods: {
+            onPosition(idx) {
+                const { positions } = this;
+                let obj = {
+                	x:0,
+                	y:0,
+                }
+                if (positions[idx]) {
+                    obj = {
+                        x: positions[idx].x,
+                        y: positions[idx].y,
+                    }
+                }
+                return obj;
+            },
+        },
+        created(){
+        	const arr=[]
+        	const base=16.8;
+        	for(let i=0;i<12;i++){
+        		const obj={
+        			x:-i*base,
+        			y:0,
+        		}
+        		arr.push(obj)
+        	}
+        	this.positions=arr;
+        },
+    })
+    </script>
+</body>
+
+</html>
