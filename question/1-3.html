@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>原格式展示textarea内容</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+<style>
+    body{display:flex;flex-direction:column;justify-content:center;align-items:center;}
+    textarea{width:200px;height:200px;margin:0 auto;size:none;display:block;}
+    .pre_line{white-space:pre-line;margin:10px 0;}
+    .pre_wrap{white-space:pre-wrap;margin:10px 0;}
+    .box{margin:12px;padding:12px;border:solid 1px #07c160;}
+    button{width:160px;height:50px;}
+</style>
+<body>
+    <div class="box">
+        <textarea></textarea>
+    </div>
+    <div class="box">
+        <button>赋值</button>
+    </div>
+    <div class="box">
+        <h3>普通展示，对比</h3>
+        <div class="base"></div>
+    </div>
+    <div class="box">
+        <h3>pre</h3>
+        <pre></pre>
+    </div>
+    <div class="box">
+        <h3>white-space:pre-line</h3>
+        <div class="pre_line"></div>
+    </div>
+    <div class="box">
+        <h3>white-space:pre-wrap</h3>
+        <div class="pre_wrap"></div>
+    </div>
+    <script>
+        const oTextarea=document.querySelector('textarea')
+        oTextarea.value=`
+        春眠不觉晓，处处闻啼鸟。
+        夜来风雨声，花落知多少。
+        `
+        const oBtn=document.querySelector('button')
+        const oPre=document.querySelector('pre')
+        const oLine=document.querySelector('.pre_line')
+        const oWrap=document.querySelector('.pre_wrap')
+        const oBase=document.querySelector('.base')
+        fn();
+        oBtn.onclick=function(){
+            fn();
+        }
+        oTextarea.onkeyup=function(){
+            fn()
+        }
+        function fn(){
+            oBase.innerHTML=oPre.innerHTML=oLine.innerHTML=oWrap.innerHTML=oTextarea.value;
+        }
+    </script>
+</body>
+
+</html>
