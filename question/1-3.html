@@ -39,6 +39,18 @@
         <h3>white-space:pre-wrap</h3>
         <div class="pre_wrap"></div>
     </div>
+    <div id="app">
+        <div class="box">
+            <h3>改变输入使用div属性contenteditable="true"</h3>
+            <h4>输入</h4>
+            <div class="box">
+                <div contenteditable="true" v-html="text" @input="textOut"></div>
+            </div>
+            <h4>输出</h4>
+            <div class="box" v-html="textout"></div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
     <script>
         const oTextarea=document.querySelector('textarea')
         oTextarea.value=`
@@ -60,6 +72,18 @@
         function fn(){
             oBase.innerHTML=oPre.innerHTML=oLine.innerHTML=oWrap.innerHTML=oTextarea.value;
         }
+        new Vue({
+            el:'#app',
+            data:{
+                text:`<p>春眠不觉晓，处处闻啼鸟。</p><p>夜来风雨声，花落知多少。</p>`,
+                textout:`<p>春眠不觉晓，处处闻啼鸟。</p><p>夜来风雨声，花落知多少。</p>`,
+            },
+            methods:{
+                textOut(val){
+                    this.textout=val.target.innerHTML
+                }
+            },
+        })
     </script>
 </body>
 
