@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>洗牌</title>
+	<link rel="stylesheet" href="../base.css">
+</head>
+<body>
+	<style>
+		body{padding:0;margin:0;background:rgba(0,0,0,.6);}
+		.box{display:flex;flex-wrap:wrap;}
+		.item{width:10vw;height:9.6vw;margin:.2vw 0;}
+		.btn{height:50px;background:#07c160;color:#fff;font-size:24px;cursor:pointer;}
+		.btn:active{opacity:.8;}
+		.item,.btn{display:flex;justify-content:center;align-items:center;}
+		.card_base{width:7.2vw;height:9.6vw;background:#fff;border-radius:.4vw;position:relative;}
+		.card_base_title{font-size:2.2vw;font-weight:bold;color:black;padding-left:.4vw;}
+		.card_base_icon{display:flex;position:absolute;top:30%;bottom:0;left:.4vw;right:0;}
+		.card_base_icon_side{background:no-repeat top;background-size:contain;position:absolute;top:0;bottom:0;left:0;width:22%;}
+		.card_base_icon_main{background:no-repeat top;background-size:contain;position:absolute;top:1vw;bottom:0;right:0;width:78%;}
+		.card_base_icon_side_1{background-image:url(./images/card_1.png);}
+		.card_base_icon_side_2{background-image:url(./images/card_2.png);}
+		.card_base_icon_side_3{background-image:url(./images/card_3.png);}
+		.card_base_icon_side_4{background-image:url(./images/card_4.png);}
+		.card_king_title{font-size:1.6vw;font-weight:bold;width:1.6vw;word-break:break-all;line-height:1;padding-top:.8vw;padding-left:.2vw;text-align:center;}
+		.card_king_icon{background:url(./images/card_kind_2.png) no-repeat center;background-size:contain;position:absolute;top:0;right:.2vw;bottom:0;left:2vw;}
+		.card_king_icon_red{background-image:url(./images/card_kind_1.png);}
+		.bg_red{color:red;}
+	</style>
+	<div id="app">
+	    <div class="btn" @click="init">洗牌</div>
+	    <div class="box">
+	    		<div class="item" v-for="(item,index) in list" v-key="index">
+	    			<div class="card_base" v-if="item.type<=4">
+	    				<div class="card_base_title" :class="{'bg_red':(item.type==1||item.type==4)}" v-text="item.title"></div>
+	    				<div class="card_base_icon">
+	    					<div class="card_base_icon_side" :class="`card_base_icon_side_${item.type}`"></div>
+	    					<div class="card_base_icon_main" :class="`card_base_icon_side_${item.type}`"></div>
+	    				</div>
+	    			</div>
+	    			<div class="card_base" v-else>
+	    				<div class="card_king_title" :class="{'bg_red':item.type==5}">JOKER</div>
+	    				<div class="card_king_icon" :class="{'card_king_icon_red':item.type==5}"></div>
+	    			</div>
+	    		</div>
+	    </div>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script>
+	    const playCard={
+	        baseData(){
+	            const arr=['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
+	            const list=[]
+	            const typeName=['红桃','黑桃','梅花','方块']
+	            arr.forEach(item=>{
+	                for(let i=0;i<4;i++){
+	                    const type=i+1;
+	                    const obj={
+	                        title:String(item),
+	                        type,
+	                        typeName:typeName[i],
+	                    }
+	                    list.push(obj)
+	                }
+	            })
+	            const w=[{
+	                title:'JOKER',
+	                type:5,
+	                typeName:'大王',
+	            },{
+	                title:'JOKER',
+	                type:6,
+	                typeName:'小王',
+	            }]
+	            list.push(...w);
+	            return list;
+	        },
+	        onShuffleDeck(baseData){
+	            // 随机
+	            const rdArr=[]
+	            const rtn=[]
+	            while(rdArr.length<54){
+	                const rd=Math.floor(Math.random()*54);
+	                const isRd=rdArr.includes(rd)
+	                if(!isRd){
+	                    rdArr.push(rd)
+	                    rtn.push(baseData[rd])
+	                }
+	            }
+	            return rtn;
+	        },
+	    }
+	    const baseData=playCard.baseData();
+	    new Vue({
+	        el:'#app',
+	        data:{
+	            list:[],
+	        },
+	        methods:{
+	            init(){
+	                const list=playCard.onShuffleDeck(baseData)
+	                console.log(JSON.stringify(list,null,2))
+	                this.list=list;
+	            }
+	        },
+	        created(){
+	            this.init();
+	        }
+	    })
+	</script>
+</body>
+</html>
