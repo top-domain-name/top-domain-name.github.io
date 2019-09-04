@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>js封装选项卡</title>
+	<link rel="stylesheet" href="../base.css">
+</head>
+<body>
+	<style>
+	/*other*/
+	.box{}
+	.item{flex:1;height:50px;background:purple;color:#fff;margin:0 1px;}
+	.content{}
+	.content_item{background:red;flex:1;color:yellow;font-size:24px;}
+	.box,.item,.content,.content_item{display:flex;justify-content:center;align-items:center;}
+	/*插件需要*/
+	.content_item {
+	    display: none;
+	}
+	</style>
+	  <div class="box">
+	    <div class="item">title-1</div>
+	    <div class="item">title-2</div>
+	    <div class="item">title-3</div>
+	</div>
+	<div class="content">
+	    <div class="content_item">content-1</div>
+	    <div class="content_item">content-2</div>
+	    <div class="content_item">content-3</div>
+	</div>
+	<script>
+	const tab = {
+	    /**
+	     * [init 选项卡初始化]
+	     * @param  {[type]} cla1 [tab class]
+	     * @param  {[type]} cla2 [content class]
+	     * @param  {[type]} idx  [初始展示第几栏]
+	     * @return {[type]}      []
+	     */
+	    init(cla1, cla2, idx) {
+	        const oTitles = this.$$(cla1);
+	        const oContents = this.$$(cla2);
+	        const len = oTitles.length;
+	        const that = this;
+	        for (let i = 0; i < len; i++) {
+	            (function() {
+	                that.onContent(cla2, idx)
+	                oTitles[i].onclick = function() {
+	                    that.onContent(cla2, i)
+	                }
+	            })(i)
+	        }
+	    },
+	    onContent(cla2, n) {
+	        const oContents = this.$$(cla2);
+	        const len = oContents.length;
+	        for (let i = 0; i < len; i++) {
+	            oContents[i].style.display = 'none'
+	        }
+	        oContents[n].style.display = 'block'
+	    },
+	    $$(cls) {
+	        return document.querySelectorAll(cls)
+	    }
+	}
+	tab.init('.item', '.content_item', 1)
+	</script>
+</body>
+</html>
