@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>全屏</title>
+</head>
+<body>
+    <style>
+        .btn{background:red;color:#fff;}
+        .content{background:purple;color:#fff;font-size:40px;display:flex;justify-content:center;padding:50px 0;}
+    </style>
+    <h1 class="btn">点击全屏下面的内容</h1>
+    <div class="content">
+<pre>
+content：按ESC退出
+国风·周南·关雎
+先秦：佚名
+
+关关雎鸠，在河之洲。窈窕淑女，君子好逑。
+参差荇菜，左右流之。窈窕淑女，寤寐求之。
+求之不得，寤寐思服。悠哉悠哉，辗转反侧。
+参差荇菜，左右采之。窈窕淑女，琴瑟友之。
+参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。
+</pre>
+    </div>
+    <script>
+        document.querySelector('.btn').onclick=toggleFullScreen;
+        function FullScreen(el) {
+            var isFullscreen = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+            if (!isFullscreen) { //进入全屏
+                (el.requestFullscreen && el.requestFullscreen()) ||
+                (el.mozRequestFullScreen && el.mozRequestFullScreen()) ||
+                (el.webkitRequestFullscreen && el.webkitRequestFullscreen()) || (el.msRequestFullscreen && el.msRequestFullscreen());
+
+            } else { //退出全屏
+                document.exitFullscreen ? document.exitFullscreen() :
+                    document.mozCancelFullScreen ? document.mozCancelFullScreen() :
+                    document.webkitExitFullscreen ? document.webkitExitFullscreen() : '';
+            }
+        }
+
+        function toggleFullScreen(e) {
+            var el = e.srcElement || e.target; //target兼容Firefox
+            const oCon=document.querySelector('.content')
+            // FullScreen(el);
+            FullScreen(oCon)
+        }
+    </script>
+</body>
+</html>
