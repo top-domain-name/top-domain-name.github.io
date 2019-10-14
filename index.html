@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=no">
 	<title>px turn vw</title>
 </head>
+
 <body>
 	<style>
-	    .over{font-size:6.4vw;}
+		.over{font-size:6.4vw;}
 	    .over_num{color:red;font-size:8.53vw;font-weight:bold;}
 	    .input{margin:3.2vw 0;overflow:hidden;border:solid 0.27vw #07c160;}
 	    input{width:100%;height:13.33vw;font-size:8.53vw;color:purple;float:left;box-shadow:none;outline:none;}
@@ -17,9 +19,20 @@
 	    .item{background:#07c160;color:#fff;display:flex;justify-content:space-between;align-items:center;height:11.73vw;font-size:4.27vw;padding:0 3.2vw;margin-bottom:0.27vw;width:50%;box-sizing:border-box;}
 	    .item:nth-child(2n){border-left:solid 0.27vw #fff;}
 	    .left{padding-right:10.67vw;}
+	    .turn_box{}
+	    .bg{position:fixed;z-index:8;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.6);}
+	    .turn_main{position:fixed;top:50%;transform:translateY(-50%);left:40px;right:40px;background:#fff;z-index:9;padding:0 24px 12px;}
+	    .turn_title{font-size:22px;color:#07c160;padding:16px 0 12px;}
+	    .turn_textarea{padding:12px;border:solid 1px #07c160;}
+	    textarea{border:none;outline:none;font-size:16px;padding:0;resize:none;width:100%;height:100px;}
+	    .turn_btn{display:flex;margin-top:24px;}
+	    .turn_item{background:#07c160;flex:1;margin:0 24px;display:flex;justify-content:center;align-items:center;color:#fff;border-radius:3px;height:44px;cursor:pointer;}
+	    .turn_item:hover{opacity:.8;}
+	    .alert_box{background:rgba(255,255,255,.8);padding:12px 24px;position:fixed;top:0;left:0;right:0;z-index:10;color:#07c160;}
+			.alert_text{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
 	</style>
 	<div id="app">
-		<div class="over">结果：<span class="over_num" v-text="vwVal"></span> vw</div>
+		<div class="over" @click="onTurn">结果：<span class="over_num" v-text="vwVal"></span> vw</div>
 		<div class="input"><input type="number" placeholder="请输入数字" v-model="inputVal"></div>
 		<div class="list">
 			<div class="item" v-for="(item,index) in arr" v-key="index">
@@ -27,47 +40,111 @@
 				<div v-text="item.to"></div>
 			</div>
 		</div>
+		<!-- turn -->
+		<div class="turn_box" v-show="isTurn">
+			<div class="bg" @click="isTurn=false"></div>
+			<div class="turn_main">
+				<div class="turn_title">原始</div>
+				<div class="turn_textarea">
+					<textarea v-model="turnBase" @input="onPxTurnVw"></textarea>
+				</div>
+				<div class="turn_title">结果</div>
+				<div class="turn_textarea">
+					<textarea v-model="turnRtn"></textarea>
+				</div>
+				<div class="turn_btn">
+					<div class="turn_item" @click="onPxTurnVw">px=>vw</div>
+					<div class="turn_item" @click="onVwTurnPx">vw=>px</div>
+					<div class="turn_item" v-clipboard:copy="turnRtn" v-clipboard:success="onCopy" v-clipboard:error="onError">copy-over</div>
+				</div>
+			</div>
+		</div>
+		<div class="alert_box" v-show="isAlert">
+			<div class="alert_text" v-text="alertText"></div>
+		</div>
 	</div>
 	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script src="./js/vue-clipboard.min.js"></script>
 	<script>
-		new Vue({
-			el:'#app',
-			data:{
-				inputVal:'',
-				maxVal:100,
-				arr:[],
+	new Vue({
+		el: '#app',
+		data: {
+			inputVal: '',
+			maxVal: 100,
+			arr: [],
+			turnBase: '',
+			isTurn: true || false,
+			isPx: true,
+			turnRtn: '',
+			isAlert: false,
+			alertText: '',
+		},
+		methods: {
+			onAlert(text) {
+				clearTimeout(this.timer);
+				this.alertText = text;
+				this.isAlert = true;
+				this.timer = setTimeout(() => {
+					this.isAlert = false;
+				}, 1500)
 			},
-			methods:{
-				onVw(val){
-					const r=val/375*100
-					console.log(`${val}=>${r}`)
-					return r.toFixed(2);
-				},
-				onList(){
-					const {maxVal}=this;
-					const arr=[];
-					const begin=[1,2,4,6,8,12,14,13,15,16,17,18,20,24,26,28,30,32,36,38,40,42,44,48];
-					begin.forEach(item=>{
-						const to=this.onVw(item);
-						const obj={
-							from:`${item}=>`,
-							to,
-						};
-						arr.push(obj);
-					})
-					this.arr=arr;
-				},
+			onCopy: function(e) {
+				this.onAlert('You just copied： ' + e.text)
 			},
-			computed:{
-				vwVal(){
-					const {inputVal}=this;
-					return (inputVal/375*100).toFixed(2);
-				},
+			onError: function(e) {
+				alert('Failed to copy texts')
 			},
-			created(){
-				this.onList();
+			onTurn() {
+				this.isTurn = true;
 			},
-		})
+			onPxTurnVw() {
+				const { turnBase } = this;
+				const result = turnBase.replace(/\d+px/img, res => {
+					const rtn = (parseFloat(res) / 375 * 100).toFixed(2)
+					return `${rtn}vw`;
+				})
+				this.turnRtn = result;
+				this.isPx = true;
+			},
+			onVwTurnPx() {
+				const { turnBase } = this;
+				const result = turnBase.replace(/[\d.?]+vw/img, res => {
+					const rtn = (parseFloat(res) * 375 / 100).toFixed(2)
+					return `${rtn}px`;
+				})
+				this.isPx = false;
+				this.turnRtn = result;
+			},
+			onVw(val) {
+				const r = val / 375 * 100
+				return r.toFixed(2);
+			},
+			onList() {
+				const { maxVal } = this;
+				const arr = [];
+				const begin = [1, 2, 4, 6, 8, 12, 14, 13, 15, 16, 17, 18, 20, 24, 26, 28, 30, 32, 36, 38, 40, 42, 44, 48];
+				begin.forEach(item => {
+					const to = this.onVw(item);
+					const obj = {
+						from: `${item}=>`,
+						to,
+					};
+					arr.push(obj);
+				})
+				this.arr = arr;
+			},
+		},
+		computed: {
+			vwVal() {
+				const { inputVal } = this;
+				return (inputVal / 375 * 100).toFixed(2);
+			},
+		},
+		created() {
+			this.onList();
+		},
+	})
 	</script>
 </body>
+
 </html>
