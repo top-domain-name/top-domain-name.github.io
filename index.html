@@ -54,8 +54,9 @@
 				</div>
 				<div class="turn_btn">
 					<div class="turn_item" @click="onPxTurnVw">px=>vw</div>
-					<div class="turn_item" @click="onVwTurnPx">vw=>px</div>
-					<div class="turn_item" v-clipboard:copy="turnRtn" v-clipboard:success="onCopy" v-clipboard:error="onError">copy-over</div>
+					<div class="turn_item" @click="onPxTurnEm">px=>em</div>
+					<div class="turn_item" @click="onReplyPx">reply-px</div>
+					<div class="turn_item" v-clipboard:copy="turnRtn" v-clipboard:success="onCopy" v-clipboard:error="onError">copy-result</div>
 				</div>
 			</div>
 		</div>
@@ -74,7 +75,6 @@
 			arr: [],
 			turnBase: '',
 			isTurn: true || false,
-			isPx: true,
 			turnRtn: '',
 			isAlert: false,
 			alertText: '',
@@ -97,23 +97,27 @@
 			onTurn() {
 				this.isTurn = true;
 			},
+			onPxTurnEm() {
+				const { turnBase } = this;
+				const result = turnBase.replace(/\d+px/img, res => {
+					const text = (parseFloat(res) / 16).toFixed(2)
+					const rtn = Number(text)
+					return `${rtn}em`;
+				})
+				this.turnRtn = result;
+			},
 			onPxTurnVw() {
 				const { turnBase } = this;
 				const result = turnBase.replace(/\d+px/img, res => {
-					const rtn = (parseFloat(res) / 375 * 100).toFixed(2)
+					const text = (parseFloat(res) / 375 * 100).toFixed(2)
+					const rtn = Number(text)
 					return `${rtn}vw`;
 				})
 				this.turnRtn = result;
-				this.isPx = true;
 			},
-			onVwTurnPx() {
+			onReplyPx() {
 				const { turnBase } = this;
-				const result = turnBase.replace(/[\d.?]+vw/img, res => {
-					const rtn = (parseFloat(res) * 375 / 100).toFixed(2)
-					return `${rtn}px`;
-				})
-				this.isPx = false;
-				this.turnRtn = result;
+				this.turnRtn = turnBase;
 			},
 			onVw(val) {
 				const r = val / 375 * 100
