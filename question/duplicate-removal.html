@@ -20,7 +20,6 @@
         </div>
         <div class="btn" @click="onBtn">t=>copy</div>
     </div>
-    <script src="main.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
     <script>
         new Vue({
@@ -34,6 +33,14 @@
                     const list=text.split('\n')
                     const arr=[...new Set(list)]
                     const filters=arr.filter(item=>item.length==11)
+                    const markText=" "
+                    let filtersLen=filters.length;
+                    let n=5
+                    while(n<=filtersLen){
+                      filters.splice(n,0,markText)
+                      filtersLen=filters.length;
+                      n+=6;
+                    }
                     const rtn=filters.join('\n')
                     this.$copyText(rtn);
                     this.text=rtn;
