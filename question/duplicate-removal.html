@@ -22,6 +22,7 @@
         <div class="btns">
             <div class="btn" @click="onBtn" data-base="5">t5=>copy</div>
             <div class="btn" @click="onBtn" data-base="1">t1=>copy</div>
+            <div class="btn" @click="onBtnGap" data-base="10" v-text="`copy${curIndex}/${duplicateList.length}`"></div>
         </div>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
@@ -29,6 +30,8 @@
         new Vue({
             el:'#app',
             data:{
+                curIndex:0,
+                duplicateList:[],
                 text:`我站在秋天的肩膀上，看时光如何荒芜了一大片一大片的忧伤，带着风雪擦亮的痕迹。城市迅速地衰颓了，如同迟暮的老人，而金秋枯黄的落叶是他们鬓角的白发，因为知道他们只有经历了沧桑，才能带着不朽的回忆，印证所有仓促逝去的岁月。离别是秋天的主打歌，热恋的人在凛冽的秋风中挥手，言别。他华丽转身，她惟美落幕，任何地点都在上演这样一出独脚戏。有些誓言说的时候总是真诚的，可是离散时却在风中飘零。曾经的“执子之手”，曾经的“不离不弃”，都没能经过这个秋天肃杀的冷气。我喜欢在每一个大雾弥漫，或者晴朗的清晨早起，在迅猛的风中读顾城的诗：“有朵晚秋的小花，因温暖而变得枯黄，在火焰逝去的地方，用双手捧着灰烬……”我始终相信这些温情的文字，可以流经我的舌尖，旋转成一个模糊的形状，我甚至可以闻到散落在空气中的，属于秋末黄花的芬芳。我想每个女人都会迷恋秋天的菊花，或者桂花。因为它们冰凉的花瓣中所隐藏的甜美而隐约的气息，可以抵达我们的灵魂，拯救血液中的最后一丝柔软。美人的苍老，英雄的晚年，都宛若经历了人生的秋天，他们会比常人更感到一种奇异的悲凉。因为之前的轰轰烈烈，所以落幕时才异常地不甘心。就像舞台上的戏子，你方唱罢我登场，可是谁都不知道她们自恋而舞的寂寞。年幼的孩子提着易碎的灯笼，而那个孤独的麦田守望者早已不知去向，留不住的终究是留不住。飞鸟在夕阳下缓缓地斜驰而过，只剩下纯白的羽翼，作为这个秋天最后的幸福影像。`,
             },
             methods:{
@@ -50,6 +53,38 @@
                     const rtn=filters.join('\n')
                     this.$copyText(rtn);
                     this.text=rtn;
+                },
+                onBtnGap(e){
+                    const {text,curIndex,duplicateList}=this;
+                    const duplicateListLen=duplicateList.length;
+                    if(duplicateListLen>0){
+                        if(duplicateListLen==curIndex){
+                            this.curIndex=0;
+                        }
+                        this.onCopy();
+                        return false;
+                    }
+                    const {base}=e.currentTarget.dataset;
+                    let n=Number(base);
+                    const list=text.split('\n')
+                    const arr=[...new Set(list)]
+                    const filters=arr.filter(item=>item.length==11)
+                    const filtersLen=filters.length;
+                    const rtn=[];
+                    for(let i=0;i<filtersLen;i+=n){
+                        const item=filters.slice(i,i+n)
+                        rtn.push(item)
+                    }
+                    this.duplicateList=rtn;
+                    this.onCopy();
+                },
+                onCopy(){
+                    const {duplicateList,curIndex}=this;
+                    const filters=duplicateList[curIndex]
+                    const rtn=filters.join('\n')
+                    this.$copyText(rtn);
+                    this.text=rtn;
+                    this.curIndex++;
                 },
             },
         })
