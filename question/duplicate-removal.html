@@ -76,7 +76,11 @@
                         rtn.push(item)
                     }
                     this.duplicateList=rtn;
-                    this.onCopy();
+                    if(rtn.length>0){
+                        this.onCopy();
+                    }else{
+                        this.text='';
+                    }
                 },
                 onCopy(){
                     const {duplicateList,curIndex}=this;
