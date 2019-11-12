@@ -12,7 +12,7 @@
   text{font-weight:300;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px}
   .node rect{stroke:#999;fill:#fff;stroke-width:1.5px}
   .edgePath path{stroke:#333;stroke-width:1.5px}
-  svg{box-sizing:border-box;border:solid 1px #07c160;width:100%;border-width:1px 0;}
+  svg{box-sizing:border-box;width:100%;}
   g.node>rect{cursor:pointer;stroke:#07c160;}
   g.node>.label{cursor:pointer;fill:#07c160;pointer-events:none;}
   g.config_2_3_empty>rect{fill:rgba(0,0,0,.1);cursor:auto;stroke:rgba(0,0,0,.5);}
@@ -81,9 +81,13 @@
   }
 
   function onCenter() {
-    var xCenterOffset = (document.body.clientWidth - g.graph().width) / 2;
-    svgGroup.attr("transform", "translate(" + xCenterOffset + ", 20)");
-    svg.attr("height", g.graph().height + 40);
+    const innerHeight=window.innerHeight-5;
+    const {clientWidth}=document.body;
+    console.log(clientWidth,innerHeight)
+    var xCenterOffset = (clientWidth - g.graph().width) / 2;
+    const top=(innerHeight-g.graph().height)/2-100;
+    svgGroup.attr("transform",`translate(${xCenterOffset},${top})`);
+    svg.attr("height", innerHeight);
   }
   </script>
 </body>
