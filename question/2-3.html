@@ -9,11 +9,16 @@
 </head>
 <style>
   *{margin:0;padding:0;}
-  g.type-TK>rect{fill:#00ffd0}
   text{font-weight:300;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px}
   .node rect{stroke:#999;fill:#fff;stroke-width:1.5px}
   .edgePath path{stroke:#333;stroke-width:1.5px}
   svg{box-sizing:border-box;border:solid 1px #07c160;width:100%;border-width:1px 0;}
+  g.node>rect{cursor:pointer;stroke:#07c160;}
+  g.node>.label{cursor:pointer;fill:#07c160;pointer-events:none;}
+  g.config_2_3_empty>rect{fill:rgba(0,0,0,.1);cursor:auto;stroke:rgba(0,0,0,.5);}
+  g.config_2_3_empty>.label{cursor:auto;fill:black;}
+  g.node>rect:hover{fill:rgba(255,0,0,.1);}
+  g.config_2_3_empty>rect:hover{fill:rgba(0,0,0,.1);}
 </style>
 
 <body>
@@ -58,10 +63,14 @@
   // Run the renderer. This is what draws the final graph.
   render(gs, g);
 
-  const arr = gs._groups[0];
+  const arr = svgGroup.selectAll('g.node')._groups[0];
   arr.forEach((item, index) => {
     item.onclick = function() {
-      console.log(item, index, 999)
+      const {link}=config_2_3[index];
+      if(!link){
+        return false;
+      }
+      window.open(link);
     }
   })
 
