@@ -91,7 +91,8 @@
     const innerHeight=window.innerHeight-5;
     const {clientWidth}=document.body;
     var xCenterOffset = (clientWidth - g.graph().width) / 2;
-    const top=(innerHeight-g.graph().height)/2-100;
+    // const top=(innerHeight-g.graph().height)/2-100;
+    const top=80;
     svg.call(zoom.transform, d3.zoomIdentity.translate(xCenterOffset, top));
     svgGroup.attr("transform",`translate(${xCenterOffset},${top})`);
     svg.attr("height", innerHeight);
