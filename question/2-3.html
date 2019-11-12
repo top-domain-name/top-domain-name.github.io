@@ -58,7 +58,14 @@
   // Set up an SVG group so that we can translate the final graph.
   var svg = d3.select("svg"),
     svgGroup = svg.append("g"),
-    gs=d3.select("svg g");
+    gs=d3.select("svg g"),
+    inner = svg.select("g");
+
+  // Set up zoom support
+  var zoom = d3.zoom().on("zoom", function() {
+        inner.attr("transform", d3.event.transform);
+      });
+  svg.call(zoom);
 
   // Run the renderer. This is what draws the final graph.
   render(gs, g);
@@ -83,9 +90,9 @@
   function onCenter() {
     const innerHeight=window.innerHeight-5;
     const {clientWidth}=document.body;
-    console.log(clientWidth,innerHeight)
     var xCenterOffset = (clientWidth - g.graph().width) / 2;
     const top=(innerHeight-g.graph().height)/2-100;
+    svg.call(zoom.transform, d3.zoomIdentity.translate(xCenterOffset, top));
     svgGroup.attr("transform",`translate(${xCenterOffset},${top})`);
     svg.attr("height", innerHeight);
   }
