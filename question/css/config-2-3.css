@@ -9,7 +9,7 @@ g.config_2_3_empty>rect{fill:rgba(0,0,0,.1);cursor:auto;stroke:rgba(0,0,0,.5);}
 g.config_2_3_empty>.label{cursor:auto;fill:black;}
 g.node>rect:hover{fill:rgba(255,0,0,.1);}
 g.config_2_3_empty>rect:hover{fill:rgba(0,0,0,.1);}
-g.config_2_3_main>rect{fill:rgba(255,0,0,.1);cursor:auto;stroke:rgba(255,0,0,.5);}
+g.config_2_3_main>rect{fill:rgba(7,193,96,.1);cursor:auto;stroke:rgba(7,193,96,.5);}
 g.config_2_3_main>.label{cursor:auto;fill:black;}
 g.node>rect:hover{fill:rgba(255,0,0,.1);}
 g.config_2_3_main>rect:hover{fill:rgba(255,0,0,.1);}
