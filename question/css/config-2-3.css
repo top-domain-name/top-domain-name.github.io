@@ -1,0 +1,15 @@
+*{margin:0;padding:0;}
+text{font-weight:300;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px}
+.node rect{stroke:#999;fill:#fff;stroke-width:1.5px}
+.edgePath path{stroke:#333;stroke-width:1.5px}
+svg{box-sizing:border-box;width:100%;}
+g.node>rect{cursor:pointer;stroke:#07c160;}
+g.node>.label{cursor:pointer;fill:#07c160;pointer-events:none;}
+g.config_2_3_empty>rect{fill:rgba(0,0,0,.1);cursor:auto;stroke:rgba(0,0,0,.5);}
+g.config_2_3_empty>.label{cursor:auto;fill:black;}
+g.node>rect:hover{fill:rgba(255,0,0,.1);}
+g.config_2_3_empty>rect:hover{fill:rgba(0,0,0,.1);}
+g.config_2_3_main>rect{fill:rgba(255,0,0,.1);cursor:auto;stroke:rgba(255,0,0,.5);}
+g.config_2_3_main>.label{cursor:auto;fill:black;}
+g.node>rect:hover{fill:rgba(255,0,0,.1);}
+g.config_2_3_main>rect:hover{fill:rgba(255,0,0,.1);}
