@@ -1,0 +1,41 @@
+window.config_2_3=[{
+  rank:'start',
+  title:`计算机专业导论`,
+  link:'',
+  noteClass:'config_2_3_main',
+},{
+  rank:'1-1',
+  title:`学什么?`,
+  link:'',
+  noteClass:'config_2_3_main',
+},{
+  rank:'1-2',
+  title:`理论思维`,
+  link:'',
+  noteClass:'config_2_3_empty',
+},{
+  rank:'1-3',
+  title:`实验思维`,
+  link:'',
+  noteClass:'config_2_3_empty',
+},{
+  rank:'1-4',
+  title:`计算思维`,
+  link:'',
+  noteClass:'config_2_3_main',
+},{
+  rank:'1-5',
+  title:`其他学科`,
+  link:'',
+  noteClass:'config_2_3_empty',
+},{
+  rank:'2-1',
+  title:`复合性思维`,
+  link:'',
+  noteClass:'config_2_3_main',
+},{
+  rank:'2-2',
+  title:`创造性思维`,
+  link:'',
+  noteClass:'config_2_3_main',
+}];
