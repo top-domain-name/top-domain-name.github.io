@@ -1,0 +1,40 @@
+window.list_config=[{
+  title:'雪碧图实战',
+  link:'./1-1.html',
+},{
+  title:'table属性控制',
+  link:'./1-2.html',
+},{
+  title:'原格式展示textarea内容',
+  link:'./1-3.html',
+},{
+  title:'js封装选项卡',
+  link:'./1-4.html',
+},{
+  title:'洗牌',
+  link:'./1-5.html',
+},{
+  title:'radio重置样式',
+  link:'./1-6.html',
+},{
+  title:'锚点',
+  link:'./1-7.html',
+},{
+  title:'全屏',
+  link:'./1-8.html',
+},{
+  title:'三个div等分',
+  link:'./1-9.html',
+},{
+  title:'table边框',
+  link:'./2-1.html',
+},{
+  title:'计算机流程图',
+  link:'./2-3.html',
+},{
+  title:'冰山模型',
+  link:'./2-4.html',
+},{
+  title:'计算机专业导论',
+  link:'./2-5.html',
+}]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>实战列表</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+<style>
+  .list_item{padding:12px;border-bottom:solid 1px #07c160;transition:all .3s;}
+  .list_item:hover{color:#07c160;border-color:#000;}
+</style>
+<body>
+  <div id="app">
+    <div class="list">
+      <a :href="item.link" target="_blank" class="list_item" v-for="(item,index) in list" :key="index" v-text="`${index+1}、${item.title}`"></a>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="./config/list-config.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        list:list_config,
+      },
+    })
+  </script>
+</body>
+</html>
