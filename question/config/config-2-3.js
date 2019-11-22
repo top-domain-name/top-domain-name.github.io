@@ -6,17 +6,17 @@ window.config_2_3=[{
 },{
   rank:'1-1',
   title:'计算机专业导论之思维与系统',
-  link:'https://mooc.study.163.com/learn/1000003008?tid=2001381036#/learn/content?type=detail&id=2001684675&cid=2001674809',
+  link:'https://mooc.study.163.com/learn/1000003008?tid=2001381036#/learn/content',
   noteClass:'',
 },{
   rank:'1-2',
   title:'计算机专业导论之语言与算法',
-  link:'https://mooc.study.163.com/learn/1000004007?tid=2001382039#/learn/content?type=detail&id=2001685452&cid=2001673625',
+  link:'https://mooc.study.163.com/learn/1000004007?tid=2001382039#/learn/content',
   noteClass:'',
 },{
   rank:'1-3',
   title:'计算机专业导论之学科与专业',
-  link:'https://mooc.study.163.com/learn/1000004008?tid=2001382040#/learn/content?type=detail&id=2001684702&cid=2001674853',
+  link:'https://mooc.study.163.com/learn/1000004008?tid=2001382040#/learn/content',
   noteClass:'',
 },{
   rank:'2-1',
@@ -26,7 +26,7 @@ window.config_2_3=[{
 },{
   rank:'2-2',
   title:'程序设计入门—Python',
-  link:'https://mooc.study.163.com/learn/1000002017?tid=2001354013#/learn/content?type=detail&id=2001640337&cid=2001633766',
+  link:'https://mooc.study.163.com/learn/1000002017?tid=2001354013#/learn/content',
   noteClass:'',
 },{
   rank:'3-1',
@@ -51,12 +51,12 @@ window.config_2_3=[{
 },{
   rank:'5-1',
   title:'程序设计入门-Java语言',
-  link:'https://mooc.study.163.com/learn/1000002014?tid=2001462000#/learn/content?type=detail&id=2001777022&cid=2001782076',
+  link:'https://mooc.study.163.com/learn/1000002014?tid=2001462000#/learn/content',
   noteClass:'',
 },{
   rank:'5-2',
   title:'Java语言程序设计进阶',
-  link:'https://mooc.study.163.com/learn/1000004001?tid=2001463000#/learn/content?type=detail&id=2001778187&cid=2001783256',
+  link:'https://mooc.study.163.com/learn/1000004001?tid=2001463000#/learn/content',
   noteClass:'',
 },{
   rank:'5-3',
