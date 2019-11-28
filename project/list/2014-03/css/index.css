@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+/*重置*/
+*{ margin:0; padding:0;}
+a{ text-decoration:none; color:inherit;}
+li{ list-style:none;}
+img{ border:none;}
+input{ outline:none;}
+/*nav*/
+.nav_b{background-color:white; width:100%; height:107px; position:fixed; z-index:2;filter:alpha(opacity=95);-moz-opacity:0.95;opacity:0.95;border-bottom:solid 1px #e4e4e4;}
+.nav{ width:1002px; margin:0 auto;}
+.nav_00{width:1002px;position:fixed; overflow:hidden; z-index:999;}
+.nav_01{width:154px;height:45px;background-image:url(../images/index_01.jpg);margin-top:31px; background-repeat:no-repeat;border-right:solid 1px #e4e4e4; float:left;}
+.nav_02{font-size:14px;line-height:107px;margin-left:26px; float:left;}
+.nav_03{ float:right;width:139px; line-height:107px;font-size:18px; text-align:center;border-left:solid 1px #e4e4e4;font-family:"微软雅黑";}
+.nav_04{ float:right;width:139px; line-height:107px;font-size:18px; text-align:center;border-left:solid 1px #e4e4e4;border-right:solid 1px #e4e4e4;font-family:"微软雅黑";}
+.nav_05{ float:right;width:139px; line-height:107px;font-size:18px; text-align:center;border-left:solid 1px #e4e4e4;font-family:"微软雅黑";border-right:solid 1px #e4e4e4;margin-right:280px;}
+.nav_banner{ width:100%; height:107px;}
+.banner{position:relative; height:618px;}
+.banner li{ position:absolute;top:0;left:0; width:100%;height:618px;}
+.banner li.banner_01{ background:url(../images/index_02.jpg) center top no-repeat;}
+.banner_02{font-size:20px;margin:0 0 12px; text-align:center;font-family:"微软雅黑";color:#636363;}
+.banner_03{ width:1020px;margin:0 auto; color:#707070;font-size:14px; overflow:hidden;}
+.banner_04{float:left;width:320px; background-color:#efefef;margin:20px 10px 0;}
+.banner_05{line-height:57px; padding:0 22px;overflow:hidden;}
+.banner_06{float:left;}
+.banner_07{ margin-left:20px;color:#292828;border-bottom: dashed 1px #ababab; float:left;width:228px;}
+.banner_08{ float:left;font-size:12px;width:228px;margin-left:20px;line-height:20px; margin-top:19px;border-bottom: dashed 1px #ababab; padding-bottom:14px;}
+.banner_09{ float:left;font-size:12px;width:228px;margin-left:20px;line-height:20px; margin-top:19px;}
+.banner_09 span{font-size:14px;color:#292828; font-family:"微软雅黑";font-weight:bold;}
+.banner_10{width:21px;height:10px;float:left;}
+.banner_11{ display: block;width:111px;height:91px; border-radius:200px;text-align:center;line-height:24px;font-size:20px;font-family:"微软雅黑";border:solid 2px #636363;margin:52px auto 0;padding-top:20px;}
+.banner_11:hover{color:#252525;background-color:#e4e4e4;}
+.banner_12{position:relative;height:839px;margin-top:47px;}
+.banner_12 li{ position:absolute;top:0;left:0; overflow:hidden; width:100%;height:839px;}
+.banner_12 li.banner_13{ background:url(../images/index_06.jpg) center top no-repeat;}
+.banner_14{font-family:"微软雅黑";font-size:20px;text-align:center;margin:0 0 36px;}
+.banner_15{font-size:12px;width:620px;margin:0 auto 44px;line-height:20px;}
+.banner_16{ width:1002px;margin:0 auto;overflow:hidden;margin-bottom:110px;}
+.banner_16 img{float:left;}
+.banner_17{width:100%;height:150px; margin-top:-60px;}
+.banner_18{width:100%;height:146px; margin-top:-80px;}
+.footer{width:100%; padding-bottom:30px; background-color:#e4e4e4;}
+.footer_01{margin:0 auto;width:148px;background-image:url(../images/index_10.jpg);background-repeat:no-repeat;height:200px;}
+.footer_02{width:399px;overflow:hidden;margin:30px auto 20px;}
+.footer_03{width:156px;height:35px;background-image:url(../images/index_11.jpg);float:left;background-repeat:no-repeat;border-right:solid 1px #d0cfcf;padding-right:20px;}
+.footer_04{width:202px;height:35px;background-image:url(../images/index_12.jpg); float:left; margin-left:20px;}
+.footer_05{text-align:center;font-size:14px;color:#6d6d6d;font-family:Arial, Helvetica, sans-serif;}
+.footer_06{height:40px;}
+.modpic{display:block;}
+.modpic a{display:block;position:relative;overflow:hidden;}
+.modpic a span{display:block;position:absolute;width:320px;height:200px;background-color:black;filter:alpha(opacity=85);-moz-opacity:0.85;opacity:0.85;padding:26px 86px;left:0px;top:200px;}
+.modpic img{ float:left;}
+.sp_01{height:50px;}

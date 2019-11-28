@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>展示列表</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+<style>
+  .list_box{padding:16px 10px;box-sizing:border-box;flex-wrap: wrap;-webkit-box-pack:start;justify-content:flex-start;}
+  .list_item{-webkit-box-align:start;align-items:flex-start;width:50%;box-sizing:border-box;padding:16px;cursor:pointer;-webkit-transition:all .2s;transition:all .2s;background:#fff;}
+  .list_item:hover{box-shadow:0 0 16px 0 rgba(0,0,0,.2);-webkit-transform:scale(1.02);transform:scale(1.02);}
+  .list_date{-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;width:58px;height:58px;border:solid 1px #07c160;border-radius:2px;margin-right:16px;color:#07c160;font-size:18px;}
+  .list_info{color:#333;-webkit-box-flex:1;flex:1;}
+  .list_title{font-size:18px;position:relative;padding-bottom:8px;}
+  .list_title::before{content:'';position:absolute;left:0;bottom:0;width:38px;height:1px;background:#07c160;}
+  .list_desc{color:#b3b9f5;font-size:14px;margin-top:8px;}
+  @media screen and (max-width: 800px) {
+    .list_item{width:100%;}
+  }
+</style>
+<body>
+  <div id="app">
+    <div class="list_box flex">
+      <a target="_black" :href="item.link" class="list_item flex" v-for="(item,index) in list" :key="index">
+        <div class="list_date flex" v-text="item.date"></div>
+        <div class="list_info">
+          <div class="list_title text_1" v-text="item.title"></div>
+          <div class="list_desc text_2" v-text="item.desc"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="./config/list-config.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        list:list_config,
+      },
+    })
+  </script>
+</body>
+</html>

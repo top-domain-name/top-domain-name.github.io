@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <!--服务协议-->
+    <script>
+    $(document).ready(function(){
+    	$("#pro-btn").click(function(){
+    		$('.pro-bg').fadeIn(500);
+    		$('.pro-con').fadeIn(500);
+    		$('.close').fadeIn(500);
+        $(".pro-box").fadeOut(500);
+    	});
+    	$(".close").click(function(){
+    		$('.pro-bg').fadeOut(500);
+    		$('.pro-con').fadeOut(500);
+    		$('.close').fadeOut(500);
+        $(".pro-box").fadeIn(500);
+    	});
+    });
+    </script>
+    <!--男女切换-->
+    <script type="text/javascript">
+    jQuery(function ($){
+      $(".segment-select").Segment();
+    });
+    </script>
+	<title>关于我们</title>
+</head>
+<style>
+*{margin:0;padding:0;font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+body{background:url(images/bg.png);}
+.title{overflow:hidden;}
+.title img{width:100%;float:left;}
+.data{color:#603913;font-size:0.9rem;text-indent:1.8rem;width:88%;margin-left:6%;}
+.data span{display:block;text-indent:0;color:#ed1c24;}
+.con{overflow:hidden;}
+.con img{float:left;width:50%;}
+.firm{background:rgba(255,249,160,1);width:90%;padding:1rem 5% 2rem;background-image:url(images/bg.png);}
+.footer{overflow:hidden;font-size:1rem;box-shadow:0 0 0 2px white inset;border-radius:6px;padding:3%;background:rgba(255,255,255,0.2);margin-bottom:10px;}
+.footer .left{float:left;color:#00878d;padding-right:1.6%;margin-right:1.6%;box-shadow:1.4px 0 0 0 #57b0b4;}
+.footer .left span{display:inline-block;width:1.2rem;}
+.footer .right{overflow:hidden;}
+.footer .right a{text-decoration:none;color:#025597;border-bottom:1px solid #025597;}
+.phone{color:#00878d;text-decoration:none;font-size:1rem;line-height:100%;}
+.phone span{font-size:2rem;font-weight:bold;line-height:120%;}
+.phone{color:#603913;text-decoration:none;font-size:1rem;}
+.phone div{display:inline-block;line-height:100%;}
+.phone span{font-size:2rem;font-weight:bold;line-height:120%;}
+.apply-bg{font-family:"微软雅黑",Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;background:#00878d;}
+input{ outline:none;}
+button{border:none;}
+a{text-decoration:none;}
+/*预约申请*/
+.logo{width:20%;padding:1%;background:white;border-radius:100%;box-shadow:0 0 0 1px #339ea6 inset;margin:20px 0 0 39%;}
+.mark{color:white;font-size:1.2em;margin-left:50%;overflow:hidden;position:absolute;left:-3.2em;line-height:100%;}
+.mark span{display:block;float:left;width:1.6em;box-shadow:-1px 0 0 0 white inset;text-align:center;}
+.mark div{width:1.6em;text-align:center;float:left;}
+.mark_01{margin-top:1.8em;}
+.apply{margin-top:0.6em;width:94%;margin-left:3%;background:white;border-radius:8px;background:white;}
+.apply img{float:left;height:36px;padding:7px 0 7px 10px;position:absolute;z-index:999;background:white;border-radius:8px 0 0 8px;}
+
+.select-main,.select-set{position:relative;height:50px;}
+.select-block,.select-main,.select-set{border-radius:8px;background-color:#FFF;}
+.select-main{width:90%;margin-left:10%;font-size:1.2em;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;}
+.select-set{z-index:5;overflow:hidden;padding:0 35px 0 15px;color:#333;line-height:50px;cursor:pointer;}
+.select-arrow,.select-arrow.reverse{width:13px;height:13px;box-shadow:2px 2px 0 0 #ccc;}
+.select-arrow{position:absolute;top:12px;right:20px;z-index:7;cursor:pointer;-webkit-transform:rotate(45deg);}
+.select-arrow.reverse{top:22px;-webkit-transform:rotate(-135deg);}
+.select-block{position:absolute;top:51px;width:111.12%;line-height:20px;left:-11.12%;z-index:1000;}
+.select-list{margin:8px 0;cursor:pointer;}
+.select-list li{border-bottom:solid #b0ecef 1px;line-height:150%;color:#666;}
+.select-list::-webkit-scrollbar{width:12px;}
+.select-list::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 1px rgba(0,0,0,.5);}
+.select-items{padding:7px 15px;color:#333;}
+.select-items.active{background-color:#00878d;color:#FFF;}
+.apply_01{width:94%;background:white;margin-left:3%;border-radius:8px;overflow:hidden;margin-top:14px;}
+.apply_01 img{height:36px;padding:7px 0 7px 10px;position:absolute;z-index:999;background:white;border-radius:8px 0 0 8px;}
+.apply_01 input{border:none;line-height:34px;font-size:1.2em;margin-left:10%;padding:8px 0;width:100%;padding-left:15px;}
+.code_01{width:46%;float:left;}
+.code_01 input{margin-left:20%;}
+.apply_02{width:46%;height:50px;box-shadow:0 0 0 1px white inset;background:#00878d;border-radius:8px;float:right;margin:14px 3% 0 0;color:white;font-size:1.2em;}
+.apply_03{overflow:hidden;}
+.ui-segment{color:#ccc;background:#fff;box-shadow:0 0 0 1px white;border-radius:8px;overflow:hidden;width:94%;margin-left:3%;height:50px;margin-top:14px;}
+.ui-segment span.option.active{background-color:#00878d;color:#fff;width:50%;}
+.ui-segment span.option{font-size:1.2em;text-align:center;display:block;line-height:50px;float:left;width:50%;text-shadow:none;}
+/*－－服务协议－－*/
+.apply_04{width:100%;height:2.2em;overflow:hidden;position:relative;margin-bottom:10px;}
+.pro-btn{position:absolute;color:#003663;font-size:1em;width:100%;margin-left:50%;left:-9.4em;margin-top:14px;}
+.pro-kno{color:#CCC;float:left;margin-right:-6px;margin-left:4px;}
+.pro-bg{width:100%;height:100%;position:fixed;background:#00878d;opacity:0.95;z-index:10001;top:0;display:none;}
+.pro-con{padding:10px 20px 40px;line-height:150%;color:white;position:absolute;z-index:10002;display:none;}
+.pro-tit{text-align:center;font-size:1.2em;font-weight:bold;margin-bottom:6px;}
+.pro_01{text-indent:2em;}
+.pro_02{text-indent:1.6em;}
+.pro_03{text-indent:4em;}
+
+.close{position:fixed;right:0;top:0;padding:20px 10px 10px;z-index:10003;display:none;width:30px;height:20px;}
+.close div{width:30px;height:1px;background:white;box-shadow:0 1px 2px 0 #585858;}
+.cl_01{-webkit-transform:rotate(45deg);}
+.cl_02{-webkit-transform:rotate(-45deg);}
+
+input[type=checkbox] {visibility: hidden;}
+.checkboxFive {position: relative;float:left;}
+.checkboxFive label { position: absolute;width:1.2em;height:1.2em;top:-0.04em;left:-0.3em;background:white;border:1px solid #00878d;border-radius:3px;}
+.checkboxFive label:after {opacity:0;content: '';position: absolute;width:0.7em;height:0.4em;background: transparent;top:0.2em;left:0.2em;border: 2px solid #00878d;border-top: none;border-right: none;-webkit-transform: rotate(-45deg);}
+.checkboxFive label:hover::after {opacity: 0;}
+.checkboxFive input[type=checkbox]:checked + label:after {opacity: 1;}
+.apply_05{width:94%;margin-left:3%;height:50px;font-size:1.4em;background:white;color:#00878d;border-radius:8px;margin-bottom:30px;}
+/*预约申请 over*/
+/*apply 最后添加样式*/
+.jm_01{width:94%;background:white;margin-left:3%;border-radius:8px;overflow:hidden;margin-top:14px;position:relative;}
+.jm_01 select{width:90%;height:50px;border:none;background:none;-webkit-appearance:none;appearance:none;font-size:1.2rem;margin-left:10%;padding-left:15px;outline:none;}
+.jm_01 img{height:36px;padding:7px 0 7px 10px;background:white;position:absolute;z-index:999;border-radius:8px 0 0 8px;}
+.jm_01 .icon{width:13px;height:13px;box-shadow:-2px -2px 0 0 #00878d inset;-webkit-transform:rotate(45deg);margin:14px 16px 0 6px;position:absolute;right:0;}
+.jm_01 .ui-select span{display:none;}
+.ui-loader{display:none;}
+.people1{overflow:hidden;color:#603913;margin:1rem 0 0.4rem 6%;}
+.people1 img{float:left;border-radius:0.6rem;border:solid 1px #603913;width:5rem;margin-right:10px;}
+.people1-info{font-size:1.4rem;font-weight:bold;}
+.people1-info span{font-weight:normal;font-size:0.8rem;color:white;background:#ed1c24;border-radius:0.8rem;padding:0.1rem 0.6rem;}
+.about-qr-top{color:#00878d;font-style:italic;text-align:center;margin:1rem auto 2rem;font-size:0.94rem;}
+
+.ys{color:red;font-size:1.4rem;width:5.2rem;height:4.4rem;text-align:center;line-height:130%;padding-top:0.8rem;background:rgba(0,137,144,0.4);border-radius:100%;position:fixed;z-index:9999;right:.4rem;top:50%;margin-top:-1.8rem;-webkit-animation:1s myys infinite}
+@-webkit-keyframes myys{0%{margin-top:-1.8rem}
+50%{margin-top:-1.2rem}
+100%{margin-top:-2rem}
+</style>
+<body>
+<!--服务协议内容 这部分隐藏 位置放在整个页面的顶部 否则后果自负-->
+<div class="close">
+  <div class="cl_01"></div>
+    <div class="cl_02"></div>
+</div>
+<div class="pro-bg"></div>
+<div class="pro-con">
+  <div class="pro-tit">服务协议</div>
+  <div>尊敬的用户：</div>
+  <div class="pro_01">欢迎使用寰宇医道！</div>
+  <div class="pro_02">【协议说明】本协议是您与寰宇医道之间关于使用健康咨询及相关服务所订立的协议。</div>
+  <div class="pro_02">【审慎阅读】您在申请本服务时，同意本协议之前，应当认真阅读本协议。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、法律适用和争议解决条款。如您对协议有任何疑问，可向寰宇医道工作人员进行咨询。如您未满18周岁，或以其他形式被限制民事行为能力，请在监护人的陪同下阅读本协议。</div>
+  <div class="pro_02">【签约动作】当您按照提示填写信息、阅读并同意本协议且完成全部预约申请程序后，即表示您已充分阅读、理解并接受本协议的全部内容，并与寰宇医道达成一致，成为寰宇医道用户。您的预约申请行为将被认为是对本协议全部条款无保留的接受和遵守。阅读本协议的过程中，如果您不同意本协议或其中任何条款约定，您应立即停止预约申请程序。</div>
+  <div class="pro_02">【词汇定义】本文中所用词汇定义如下：</div>
+  <div class="pro_01">寰宇医道：指包括寰宇医道网站、寰宇医道移动客户端及其他现在或将来推出的基于寰宇医道服务的平台。</div>
+  <div class="pro_01">用户：指阅读并同意本协议内容，经过寰宇医道预约申请程序成为寰宇医道各项服务使用者的单位或个人。（以下更多称为“您”）</div>
+  <div class="pro_01">寰宇医道管理规定：指包括本协议在内的，由用户签署，或由寰宇医道在明显位置展示的，具有规范用户行为作用的各类规定、提示、声明文件。</div>
+  <div><span></span>一、用户及预约申请：</div>
+  <div class="pro_01">1.1用户应自行诚信向寰宇医道提供预约申请资料，用户同意其提供的预约申请资料真实、准确、完整、合法有效，用户预约申请资料如有变动的，应及时更新其预约申请资料。如果用户提供的预约申请资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且寰宇医道保留终止用户使用寰宇医道各项服务的权利。</div>
+  <div class="pro_01">1.2 用户同意，寰宇医道有权使用用户的预约申请信息、用户名、密码等信息，登陆进入用户的预约申请账户，进行证据保全，包括但不限于公证、见证等。</div>
+  <div class="pro_01">1.3用户不得将账户借给他人使用，否则用户应承担由此产生的全部责任，并与实际使用人承担连带责任。</div>
+  <div class="pro_01">1.4用户同意，寰宇医道拥有通过邮件、短信电话、微信等形式，向用户发送订单信息、促销活动等告知信息的权利。</div>
+  <div class="pro_01">1.5用户通过本服务进行购买活动时，涉及用户真实姓名/名称、通信地址、联系电话、电子邮箱等隐私信息的，本公司将予以严格保密，除非得到用户的授权或法律另有规定，本公司不会向外界披露用户隐私信息。</div>
+  <div><span></span>二、服务内容：</div>
+  <div class="pro_01">2.1服务条款</div>
+  <div class="pro_01">2.1.1本条款所称“服务”特指用户通过寰宇医道提交预约信息后预约特定医生进行的健康咨询及相关活动，该服务的交互主体为寰宇医道的用户和寰宇医道。</div>
+  <div class="pro_01">2.1.2寰宇医道需保证提供安全、稳定的服务场所，保证服务的顺利进行。</div>
+  <div class="pro_01">2.1.3如服务在进行过程中由于寰宇医道平台性能不稳定等系统原因导致服务不能完成的，将由寰宇医道为您安排重新健康咨询服务。</div>
+  <div class="pro_01">2.1.4一旦发现用户提供的个人信息中有虚假，寰宇医道有权立即终止向用户提供的所有服务，并冻结用户的帐户，有权要求用户赔偿因提供虚假信息给寰宇医道造成的损失。</div>
+  <div class="pro_01">2.1.5健康咨询均只限于根据用户提供的病历资料，医生尽可能利用医学知识及临床经验给予一定的解惑及如何就医方面的建议。寰宇医道不保证满足用户要求的诊断、治疗方面的建议一定能获得，不对结果是否符合用户预期做保证。</div>
+  <div class="pro_01">2.1.6健康咨询中医生所提供内容均是个人建议，不得做为诊断、治疗的直接医疗处置，用户需知晓并同意诊断及治疗均需前往医院。擅自将医生建议做为处方使用的，后果自负，与医生及寰宇医道无关。</div>
+  <div class="pro_01">2.1.7用户在健康咨询过程中要语言文明，尊重医生，平等交流。如有对医生恶意中伤，语言不文明，医生有权立即中断服务，用户无权要求退款。</div>
+  <div class="pro_01">2.1.8健康咨询过程中遇到医生有紧急事情处理时（医生职业要求），要给予理解，暂停咨询，向寰宇医道客服申报，以便安排重新咨询的具体时间。</div>
+  <div class="pro_01">2.2服务中寰宇医道与用户双方的权利及义务</div>
+  <div class="pro_01">2.2.1寰宇医道有义务在现有技术上维护服务的正常进行，并努力提升技术及改进技术，使服务更好进行。</div>
+  <div class="pro_01">2.2.2寰宇医道必须保证提供健康咨询服务的医生是平台介绍的医生本人。</div>
+  <div class="pro_01">2.2.3对于用户在本平台预定服务中的不当行为或其它任何寰宇医道认为应当终止服务的情况，寰宇医道有权随时作出终止服务等处理，而无须征得用户的同意。</div>
+  <div class="pro_03">如存在下列情况：</div>
+  <div class="pro_03">(1) 用户或其它第三方通知寰宇医道，认为某个具体用户或具体交易事项可能存在重大问题；</div>
+  <div class="pro_03">(2)用户或其它第三方向寰宇医道告知咨询内容有违法或不当行为的，寰宇医道以普通非专业的知识水平标准对相关内容进行判别，可以明显认为这些内容或行为具有违法或不当性质的。</div>
+  <div class="pro_01">2.2.4寰宇医道有义务对相关数据、所有的申请行为以及与咨询有关的其它事项进行审查。</div>
+  <div class="pro_01">2.2.5寰宇医道有权根据不同情况选择是否停止对该用户提供服务，并追究相关法律责任。</div>
+  <div class="pro_01">2.2.6当用户顺利使用完付费咨询服务后不得因为咨询服务中的内容不满意要求退款。</div>
+  <div class="pro_01">2.2.7系统因下列状况无法正常运作，使用户无法使用咨询服务时，寰宇医道不承担损害赔偿责任，该状况包括但不限于：</div>
+  <div class="pro_03">(1) 电信设备出现故障不能进行数据传输的；</div>
+  <div class="pro_03">(2) 因台风、地震、海啸、洪水、停电、战争、恐怖袭击等不可抗力之因素，造成系统障碍不能执行业务的；</div>
+  <div class="pro_03">(3) 由于黑客攻击、电信部门技术调整或故障、银行方面的问题等原因而造成的服务中断或者延迟；</div>
+  <div class="pro_03">(4) 因用户自身原因错过咨询时间或其他不可控原因导致服务不能使用的。</div>
+  <div><span></span>三、隐私声明：</div>
+  <div class="pro_01">3.1 适用范围</div>
+  <div class="pro_01">3.1.1 您预约申请寰宇医道服务时，根据要求提供的个人信息；</div>
+  <div class="pro_01">3.1.2 您使用寰宇医道咨询服务、参加相关活动、访问网站网页（或移动客户端）时，网站自动接收并记录用户浏览器上的服务器数据，包括但不限于IP地址、网站Cookie中的资料及您要求取用的网页记录；</div>
+  <div class="pro_01">3.1.3 您接受服务时，提供的非公开的病历资料、基本情况、诊疗方案等文字、图片、数据信息。</div>
+  <div class="pro_01">3.1.4 寰宇医道通过合法途径从其他途径取得的您的个人资料。</div>
+  <div class="pro_01">3.1.5 您认为不宜公开的其他内容。</div>
+  <div class="pro_01">3.2 信息保密</div>
+  <div class="pro_01">3.2.1 保护您的隐私是寰宇医道的一项基本政策，寰宇医道保证不对外公开或向第三方提供您在使用网络服务时存储的非公开内容。</div>
+  <div class="pro_01">3.2.2 寰宇医道可能会与第三方合作向用户提供相关的网络服务，在此情况下，如该第三方同意承担与寰宇医道同等的保护用户隐私的责任，则寰宇医道有权将您的预约申请资料等提供给该第三方。</div>
+  <div class="pro_01">3.3 信息使用：</div>
+  <div class="pro_01">3.3.1 在不透露您的保密信息的前提下，寰宇医道有权对整个用户数据库进行分析并对用户数据库进行商业上的利用。</div>
+  <div class="pro_01">3.3.2 医患之间的咨询问题内容在隐去姓名、单位、地址等信息后，寰宇医道可以不经过您的授权，进行公开、编辑、出版、发行。</div>
+  <div class="pro_01">3.3.3 为服务用户的目的，寰宇医道可能通过使用您的个人信息向您提供服务，包括但不限于向您发出活动和服务信息等。</div>
+  <div><span></span>四、违约赔偿：</div>
+  <div class="pro_01">您同意保障和维护寰宇医道及其他用户的利益，如因您违反有关法律、法规或寰宇医道管理规定而给寰宇医道或任何其他第三人造成损失，您同意承担由此造成的损害赔偿责任。</div>
+  <div><span></span>五、通知送达</div>
+  <div class="pro_01">5.1 本协议项下寰宇医道对于您所有的通知均可通过网页公告、电子邮件、手机短信、微信或常规的信件传送等方式进行；该等通知于发送之日视为已送达给您。</div>
+  <div class="pro_01">5.2 您对于寰宇医道的通知应当通过寰宇医道对外正式公布的通信地址、传真号码、电子邮件地址等联系信息进行送达。</div>
+  <div><span></span>六、协议更新及用户关注义务</div>
+  <div class="pro_01">根据国家法律法规变化及网络运营需要，寰宇医道有权对本协议条款不时地进行修改，修改后的协议一旦被公布即生效，并代替原来的协议。用户可随时登陆查阅最新协议；用户有义务不时关注并阅读最新版的协议及客户端公告。如用户不同意更新后的协议，可以且应立即停止接受寰宇医道依据本协议提供的服务；如用户继续使用该服务，即视为同意更新后的协议。寰宇医道建议您在使用本服务之前阅读本协议及本客户端的公告。如果本协议中任何一条被视为废止、无效或因任何理由不可执行，该条应视为可分的且并不影响任何其余条款的有效性和可执行性。</div>
+  <div><span></span>七、法律管辖和适用</div>
+  <div class="pro_01">本协议的订立、执行和解释及争议的解决均应适用在中华人民共和国大陆地区适用之有效法律（但不包括其冲突法规则）。如发生本协议与适用之法律相抵触时，则这些条款将完全按法律规定重新解释，而其它有效条款继续有效。如缔约方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向有管辖权的中华人民共和国大陆地区法院提起诉讼。</div>
+  <div><span></span>八、其他规定</div>
+  <div class="pro_01">8.1 本服务条款构成您与寰宇医道对服务条款之约定事项及其他有关事宜的完整协议，除服务条款规定的之外，未赋予服务条款各方其他权利。</div>
+  <div class="pro_01">8.2 如本服务条款中的任何条款无论因何种原因完全或部分无效或不具有执行力，本条款的其余条款仍应有效并且有约束力。</div>
+  <div class="pro_01">8.3 本服务条款中的标题仅为方便而设，在解释本条款时应被忽略。</div>
+</div>
+<!--服务协议内容 over-->
+<div class="pro-box">
+<a href="#qr"><div class="ys">预约申<br>请定位</div></a>
+<div class="title"><img src="images/logo.png" alt=""></div>
+<div class="con"><img src="images/img-A1.png" alt=""><img src="images/img-B1.png" alt=""></div>
+<div class="con"><img src="images/img-A2.png" alt=""><img src="images/img-B2.png" alt=""></div>
+<div class="con"><img src="images/img-A3.png" alt=""><img src="images/img-B3.png" alt=""></div>
+<div class="con"><img src="images/img-A4.png" alt=""><img src="images/img-B4.png" alt=""></div>
+<div class="con"><img src="images/img-A5.png" alt=""><img src="images/img-B5.png" alt=""></div>
+<div class="con"><img src="images/img-A6.png" alt=""><img src="images/img-B6.png" alt=""></div>
+<div class="con"><img src="images/img-A7.png" alt=""><img src="images/img-B7.png" alt=""></div>
+<div class="con"><img src="images/img-A8.png" alt=""><img src="images/img-B8.png" alt=""></div>
+<div class="con"><img src="images/img-A9.png" alt=""><img src="images/img-B9.png" alt=""></div>
+<!-- 预约申请start -->
+<div class="apply-bg" id="qr">
+<img src="images/img-logo.png" class="logo">
+<div class="mark">
+  <span>寰</span>
+  <span>宇</span>
+  <span>医</span>
+  <div>道</div>
+</div>
+<div class="mark_01"></div>
+<!--医院选择-->
+<div class="jm_01">
+<div class="icon"></div>
+<img src="images/apply_01.png">
+<select>
+  <option value="">北京协和医院01</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">北京协和医院</option>
+</select>
+</div>
+<!--医院选择 over-->
+<!--科室选择-->
+<div class="jm_01">
+<div class="icon"></div>
+<img src="images/apply_02.png">
+<select>
+  <option value="">科室院01</option>
+  <option value="">科室院01医院</option>
+  <option value="">北室院01医院</option>
+  <option value="">北室院01医院</option>
+  <option value="">北京协和医院</option>
+  <option value="">科室院01</option>
+  <option value="">科室院01医院</option>
+  <option value="">北室院01医院</option>
+  <option value="">北室院01医院</option>
+  <option value="">北京协和医院</option>
+</select>
+</div>
+<!--科室选择 over-->
+<!--服务中心选择-->
+<div class="jm_01">
+<div class="icon"></div>
+<img src="images/apply_03.png">
+<select>
+  <option value="">内蒙古1</option>
+  <option value="">仅新加坡1医院</option>
+  <option value="">北京01医院</option>
+  <option value="">长春01医院</option>
+  <option value="">金麟协和医院</option>
+  <option value="">内蒙古1</option>
+  <option value="">仅新加坡1医院</option>
+  <option value="">北京01医院</option>
+  <option value="">长春01医院</option>
+</select>
+</div>
+<!--服务中心选择 over-->
+<div class="apply_01">
+<img src="images/apply_04.png">
+<input type="text" placeholder="姓名">
+</div>
+<div class="apply_01">
+<img src="images/apply_05.png">
+<input type="number" placeholder="手机号">
+</div>
+<div class="apply_03">
+<div class="apply_01 code_01">
+<img src="images/apply_06.png">
+<input type="number" placeholder="验证码">
+</div>
+<button class="apply_02">发送验证码</button>
+</div>
+<select class="segment-select">
+  <option value="1">男</option>
+  <option value="0">女</option>
+</select>
+<select class="segment-select">
+  <option value="1">患者本人</option>
+  <option value="0">家属</option>
+</select>
+<div class="apply_04">
+<div class="pro-btn">
+  <div class="checkboxFive">
+  	<input type="checkbox" value="1" id="checkboxFiveInput" name="" checked="checked">
+	<label for="checkboxFiveInput"></label>
+  </div>
+  <div class="pro-kno">我已阅读并同意</div>
+  <div id="pro-btn">《寰宇医道》的服务协议</div>
+</div>
+</div>
+<button class="apply_05">预&nbsp;&nbsp;&nbsp;&nbsp;约</button>
+</div>
+<!-- 预约申请end -->
+<div class="con"><img src="images/img-AA1.png" alt=""><img src="images/img-BB1.png" alt=""></div>
+<div class="con"><img src="images/img-AA2.png" alt=""><img src="images/img-BB2.png" alt=""></div>
+<div class="con"><img src="images/img-AA3.png" alt=""><img src="images/img-BB3.png" alt=""></div>
+<div class="about-qr-top">申请提交后，寰宇医道将在第一时间与您联系！</div>
+<div class="title"><img src="images/qr.png" alt=""></div>
+<div class="firm">
+	<div class="footer">
+		<div class="left">呼和浩特<br>服务中心</div>
+		<div class="right">赛罕区新华东街26号万达广场B座811/812<br><a href="tel:0471-6552233"><span>电话：0471-6552233</span>（点击直接预约）</a></div>
+	</div>
+	<div class="footer">
+		<div class="left">哈尔滨市<br>服务中心</div>
+		<div class="right">哈西大街109号哈西万达广场写字楼B座2203/2204<br><a href="tel:0451-87301579"><span>电话：0451-87301579</span>（点击直接预约）</a></div>
+	</div>
+	<div class="footer">
+		<div class="left">石家庄市<br>服务中心</div>
+		<div class="right">新华区康乐街8号尚德国际1610<br><a href="tel:0311-68003251"><span>电话：0311-68003251</span>（点击直接预约）</a></div>
+	</div>
+	<div class="footer">
+		<div class="left">济<span></span>南市<br>服务中心</div>
+		<div class="right">槐荫区经十路22799号和谐广场银座中心2#1403/1402<br><a href="tel:0531-58756051"><span>电话：0531-58756051</span>（点击直接预约）</a></div>
+	</div>
+	<div class="footer">
+		<div class="left">太<span></span>原市<br>服务中心</div>
+		<div class="right">小店区长风大街123号君威财富中心14层1401/1409<br><a href="tel:0351-2308119"><span>电话：0351-2308119</span>（点击直接预约）</a></div>
+	</div>
+	<div class="footer">
+		<div class="left">赤<span></span>峰市<br>服务中心</div>
+		<div class="right">红山区西拉沐沦大街万达广场写字楼A座2102/2103<br><a href="tel:0476-8303122"><span>电话：0476-8303122</span>（点击直接预约）</a></div>
+	</div>
+	<a href="tel:4000010197" class="phone"><div>全国统一<br>服务热线：</div><span>4000-010-197（点击直接预约）</span></a>
+</div>
+</div>
+<script>
+$("*").attr('data-role','none');
+(function( $ ){
+    $.fn.extend({
+        Segment: function ( ) {
+      $(this).each(function (){
+        var self = $(this);
+        var wrapper = $("<div>",{class: "ui-segment"});
+        $(this).find("option").each(function (){
+          var option = $("<span>",{class: 'option',text: $(this).text(),value: $(this).val()});
+          if ($(this).is(":selected")){
+            option.addClass("active");
+          }
+          wrapper.append(option);
+        });
+        wrapper.find("span.option").click(function (){
+          wrapper.find("span.option").removeClass("active");
+          $(this).addClass("active");
+          self.val($(this).attr('value'));
+        });
+        $(this).after(wrapper);
+        $(this).hide();
+      });
+        }
+    });
+})(jQuery);
+
+</script>
+</body>
+</html>

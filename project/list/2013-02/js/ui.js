@@ -1,0 +1,139 @@
+window.ui_config=[{
+  title:'按钮',
+  link:'./image-ui/1.png'
+},{
+  title:'按钮01',
+  link:'./image-ui/2.png'
+},{
+  title:'不锈钢',
+  link:'./image-ui/3.png'
+},{
+  title:'交友-附近人',
+  link:'./image-ui/4.png'
+},{
+  title:'交友-附近人列表',
+  link:'./image-ui/5.png'
+},{
+  title:'交友-附近人群组',
+  link:'./image-ui/6.png'
+},{
+  title:'交友-留言板',
+  link:'./image-ui/7.png'
+},{
+  title:'交友-筛选',
+  link:'./image-ui/8.png'
+},{
+  title:'交友-消息',
+  link:'./image-ui/9.png'
+},{
+  title:'联系人1',
+  link:'./image-ui/10.png'
+},{
+  title:'手机图标01',
+  link:'./image-ui/11.png'
+},{
+  title:'手机图标02',
+  link:'./image-ui/12.png'
+},{
+  title:'图标_01',
+  link:'./image-ui/13.png'
+},{
+  title:'新闻-订阅',
+  link:'./image-ui/14.png'
+},{
+  title:'新闻-关于',
+  link:'./image-ui/15.png'
+},{
+  title:'新闻-图片',
+  link:'./image-ui/16.png'
+},{
+  title:'新闻-图片正文',
+  link:'./image-ui/17.png'
+},{
+  title:'新闻-新闻头条',
+  link:'./image-ui/18.png'
+},{
+  title:'新闻-新闻正文',
+  link:'./image-ui/19.png'
+},{
+  title:'游戏-分类',
+  link:'./image-ui/20.png'
+},{
+  title:'游戏-管理',
+  link:'./image-ui/21.png'
+},{
+  title:'游戏-换肤',
+  link:'./image-ui/22.png'
+},{
+  title:'游戏-设置',
+  link:'./image-ui/23.png'
+},{
+  title:'游戏-搜索',
+  link:'./image-ui/24.png'
+},{
+  title:'游戏-限时免费',
+  link:'./image-ui/25.png'
+},{
+  title:'游戏-应用详情',
+  link:'./image-ui/26.png'
+},{
+  title:'编辑页面',
+  link:'./image-ui/phone/1.png'
+},{
+  title:'拨号',
+  link:'./image-ui/phone/2.png'
+},{
+  title:'短信1',
+  link:'./image-ui/phone/3.png'
+},{
+  title:'短信2',
+  link:'./image-ui/phone/4.png'
+},{
+  title:'短信弹窗',
+  link:'./image-ui/phone/5.png'
+},{
+  title:'更多弹窗',
+  link:'./image-ui/phone/6.png'
+},{
+  title:'联系人1',
+  link:'./image-ui/phone/7.png'
+},{
+  title:'联系人2',
+  link:'./image-ui/phone/8.png'
+},{
+  title:'联系人3',
+  link:'./image-ui/phone/9.png'
+},{
+  title:'联系人4',
+  link:'./image-ui/phone/10.png'
+},{
+  title:'列表弹窗',
+  link:'./image-ui/phone/11.png'
+},{
+  title:'任务管理器',
+  link:'./image-ui/phone/12.png'
+},{
+  title:'设置1',
+  link:'./image-ui/phone/13.png'
+},{
+  title:'锁屏',
+  link:'./image-ui/phone/14.png'
+},{
+  title:'通知栏-单页',
+  link:'./image-ui/phone/15.png'
+},{
+  title:'通知栏',
+  link:'./image-ui/phone/16.png'
+},{
+  title:'通知栏2',
+  link:'./image-ui/phone/17.png'
+},{
+  title:'图标_01',
+  link:'./image-ui/phone/18.png'
+},{
+  title:'图标_02',
+  link:'./image-ui/phone/19.png'
+},{
+  title:'主题-详情',
+  link:'./image-ui/phone/20.png'
+}]

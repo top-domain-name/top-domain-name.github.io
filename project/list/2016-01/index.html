@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<!-- 兼容360浏览器 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>首页</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE]>
+		<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<div class="header">
+		<div class="menu"><img src="img/menu.png" alt="菜单" draggable="false"></div>
+		<div class="menu-list">
+			<a href="index.html">首页</a>
+			<a href="#">企业俱乐部</a>
+			<a href="#">健身房</a>
+			<a href="#">加入我们</a>
+			<a href="#">关于我们</a>
+		</div>
+		<nav>
+			<a href="index.html" class="nav-ok">首页</a>
+			<a href="#">企业俱乐部</a>
+			<a href="#">健身房</a>
+			<a href="#">加入我们</a>
+			<a href="#">关于我们</a>
+		</nav>
+		<a href="#" class="logo"><img src="img/logo.png" alt="LOGO" draggable="false"></a>
+	</div>
+</header>
+<div class="content">
+	<div class="banner">
+		<img class="banner-bg" src="img/banner-bg.jpg" alt="banner背景" draggable="false">
+		<div class="box">
+			<div class="text"><img src="img/banner-img1.png" alt="为健康生活方式找到最佳运动指导" draggable="false"></div>
+			<div class="text"><img src="img/banner-img2.png" alt="阿飞运动针对企业、个人和专业用户提供运动健康管理的全套解决方案" draggable="false"></div>
+			<div class="text"><img src="img/banner-img3.png" alt="二维码" draggable="false"></div>
+		</div>
+	</div>
+	<div class="explain">
+		<img src="img/banner-img4.png" alt="说明图片" draggable="false">
+		<img src="img/banner-img5.png" alt="说明文字" draggable="false">
+	</div>
+	<div class="article">
+		<img class="img-bg" src="img/index-img1.jpg" alt="平台底图" data-parallax='{"y": 200}' draggable="false">
+		<img class="img-text" src="img/index-img2.png" alt="平台文字介绍" draggable="false">
+	</div>
+	<div class="index3">
+		<div class="img">
+			<img src="img/index-img3.jpg" alt="运动介绍图1" draggable="false">
+			<img class="show" src="img/index-img3t.png" alt="运动介绍文字1" draggable="false">
+		</div>
+		<div class="img">
+			<img src="img/index-img4.jpg" alt="运动介绍图2" draggable="false">
+			<img class="show" src="img/index-img3t.png" alt="运动介绍文字1" draggable="false">
+		</div>
+		<div class="img">
+			<img src="img/index-img5.jpg" alt="运动介绍图3" draggable="false">
+			<img class="show" src="img/index-img3t.png" alt="运动介绍文字1" draggable="false">
+		</div>
+	</div>
+	<div class="article">
+		<img class="img-bg" src="img/index-img6.jpg" alt="展示图" data-parallax='{"y": 230}' draggable="false">
+		<img style="opacity:0" class="img-text" src="img/index-img2.png" alt="平台文字介绍" draggable="false">
+	</div>
+</div>
+<footer>
+	<div class="footer">
+		<nav>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">用户协议</a>
+		</nav>
+		<div class="info">
+			<img src="img/index-info1.png" alt="分享1" draggable="false">
+			<img src="img/index-info2.png" alt="分享2" draggable="false">
+			<img src="img/index-info3.png" alt="分享3" draggable="false">
+		</div>
+	</div>
+	<div class="deal"> © 2015 - Seven All Right Reserved</div>
+</footer>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.parallax-scroll.js"></script>
+<script>
+$(function(){
+	$('header nav .nav-ok').css('border','solid 1px #1f222a');
+	$('.index3 .img').hover(function(){
+		$(this).find('.show').fadeIn();
+	},function(){
+		$(this).find('.show').fadeOut();
+	});
+	$('.menu').click(function(){
+		$('.menu-list').slideToggle();
+	});
+	if($(window).width()<=600){
+		$('.article').find('img').removeAttr("data-parallax","0");
+	};
+})
+</script>
+</body>
+</html>

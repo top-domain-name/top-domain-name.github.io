@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<!-- 兼容360浏览器 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>首页</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<!--[if IE]>
+		<script src="../js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<style>
+header{min-width:960px;}
+.content{min-width:960px;text-align:center;}
+.club-bg{position:absolute;top:0;left:0;width: 100%;height: 100%;z-index:-1;min-width:960px;}
+.club-logo{width:90px;margin:6% auto 2%;}
+.club-text{color:white;text-align:center;font-weight:normal;font-size:64px;margin:0;}
+.club-input{margin:4% auto 0;display:table;}
+.club-input input{padding:0;border:none;background:rgba(255,255,255,.8);display:block;width:320px;height:50px;line-height:50px;font-size:16px;outline:none;text-align:center;}
+.club-input input+input{margin-top:10px;}
+.club-submit{background:black;background:rgba(0,0,0,.8);color:white;border:none;width:320px;height:50px;font-size:16px;outline:none;cursor:pointer;margin:20px auto 0;display:table;}
+@media screen and (max-width:680px){
+	header nav{display:block;}
+	.menu{display:none;}
+	.club-logo{display:block;}
+	.club-text{display:none;}
+}
+</style>
+<div class="content">
+	<img class="club-bg" src="../img/club-bg.jpg" alt="背景" draggable="false">
+	<img src="../img/club-logo.png" alt="LOGO" draggable="false" class="club-logo">
+	<h1 class="club-text">让你的团队动起来</h1>
+	<form action="#" method="post">
+		<div class="club-input">
+			<input type="text" placeholder="请输入您的账号">
+			<input type="password" placeholder="请输入您的密码">
+		</div>
+		<input type="submit" value="登录" class="club-submit">
+	</form>
+</div>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

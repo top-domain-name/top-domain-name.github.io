@@ -1,0 +1,481 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mobile</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+</head>
+<style>
+/*重置*/
+*{ margin:0; padding:0;}
+a{ text-decoration:none; color:inherit;}
+li{ list-style:none;}
+img{ border:none;}
+input{ outline:none;}
+
+body{background-color:white;font-family:"微软雅黑";font-family:Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+.time{width:98%;overflow:hidden;margin:5% 0 0 1%;}
+.time img{width:17%;margin-left:6%;}
+.time_choice{width:100%;margin-top:6%;overflow:hidden;}
+.time_choice_01{float:left;margin-left:6.3%;width:12.5%;}
+.time_choice_02{float:left;margin-left:22.4%;width:17.6%;}
+.time_choice_03{float:left;margin-left:22.4%;width:12.5%;}
+.week{width:100%;overflow:hidden;margin-top:5%;}
+.week_01{width:14%;float:left;text-align:center;font-size:0.8em;}
+.week_02{width:0.3333%;float:left;background-color:white;}
+/*01开始*/
+.date{width:100%;overflow:hidden;margin-top:0.6%;color:white;line-height:140%;}
+.date_01{width:14%;float:left;text-align:center;font-size:0.75em;background-color:#f9b52c;}
+.date_first{width:100%;overflow:hidden;margin-top:0.3333%;color:#a77135;}
+.date_first_01{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#fce0bb;}
+.date_first_02{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#fef4e8;}
+.date_first_03{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#f4ede5;}
+.remarks{overflow:hidden;margin-top:0.6em;}
+.remarks div{float:left;}
+.remarks_01{font-size:0.8em;margin-left:1em;}
+.remarks_02{width:1em;height:1em;background-color:#ffdebf;margin-left:0.6em;}
+.remarks_03{font-size:0.5em;line-height:2em;margin-left:0.6em;}
+.remarks_04{width:1em;height:1em;background-color:#fef4e8;margin-left:0.6em;}
+.remarks_05{width:1em;height:1em;background-color:#f4ede5;margin-left:0.6em;text-align:center;line-height:2em;color:#d4b479;}
+/*02开始*/
+.t_date{width:100%;overflow:hidden;margin-top:0.6%;color:white;line-height:240%;}
+.t_date_01{width:14%;float:left;text-align:center;font-size:0.75em;background-color:#08a998;}
+.t_date_first{width:100%;overflow:hidden;margin-top:0.3333%;color:#244e65;}
+.t_date_first_01{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#76c8bf;}
+.t_date_first_02{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#d1efec;}
+.t_date_first_03{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#b2ccca;}
+.t_remarks{overflow:hidden;margin-top:0.6em;}
+.t_remarks div{float:left;}
+.t_remarks_01{font-size:0.8em;margin-left:2em;}
+.t_remarks_02{width:1em;height:1em;background-color:#76c8bf;margin-left:0.6em;}
+.t_remarks_03{font-size:0.5em;line-height:2em;margin-left:0.6em;}
+.t_remarks_04{width:1em;height:1em;background-color:#d1efec;margin-left:0.6em;}
+.t_remarks_05{width:1em;height:1em;background-color:#b2ccca;margin-left:0.6em;text-align:center;line-height:2em;color:#308b81;}
+/*03开始*/
+.b_date{width:100%;overflow:hidden;margin-top:0.6%;color:white;line-height:240%;}
+.b_date_01{width:14%;float:left;text-align:center;font-size:0.75em;background-color:#1b79ab;}
+.b_date_first{width:100%;overflow:hidden;margin-top:0.3333%;color:#1f4c63;}
+.b_date_first_01{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#72a5c0;}
+.b_date_first_02{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#cee1eb;}
+.b_date_first_03{width:14%;line-height:560%;float:left;text-align:center;font-size:0.5em;background-color:#aabcc6;}
+.b_remarks{overflow:hidden;margin-top:0.6em;}
+.b_remarks div{float:left;}
+.b_remarks_01{font-size:0.8em;margin-left:2em;}
+.b_remarks_02{width:1em;height:1em;background-color:#72a5c0;margin-left:0.6em;}
+.b_remarks_03{font-size:0.5em;line-height:2em;margin-left:0.6em;}
+.b_remarks_04{width:1em;height:1em;background-color:#cee1eb;margin-left:0.6em;}
+.b_remarks_05{width:1em;height:1em;background-color:#aabcc6;margin-left:0.6em;text-align:center;line-height:2em;color:#2c617d;}
+
+.button{width:96.4%;margin:8% 0 6% 1.8%;}
+.over{overflow:hidden;}
+.none{ display:none;}
+</style>
+<body>
+<div class="time">
+    <a href="javascript:void(0) " class="sd01" id="m01"><img src="images/time_01.jpg"></a>
+    <a href="javascript:void(0) " class="sd02" id="m02"><img src="images/time_02.jpg"></a>
+    <a href="javascript:void(0) " class="sd03" id="m03"><img src="images/time_03.jpg"></a>
+    <a href="javascript:void(0) " ><img src="images/time_04.jpg"></a>
+</div>
+    <div class="time_choice">
+    <img src="images/time_left.jpg" class="time_choice_01">
+    <img src="images/time_center.jpg" class="time_choice_02">
+    <img src="images/time_right.jpg" class="time_choice_03">
+</div>
+<div class="week">
+	<div class="week_01">周一</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周二</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周三</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周四</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周五</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周六</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="week_01">周日</div>
+</div>
+
+<div id="c01">
+<div class="over">
+<div class="date">
+	<div class="date_01">01/05</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/06</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/07</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/08</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/09</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/10</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_01">01/11</div>
+</div>
+<div class="date_first">
+	<div class="date_first_01">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">08:00-09:00</div>
+</div>
+<div class="date_first">
+	<div class="date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class="date_first">
+	<div class="date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_03">10:00-11:00</div>
+</div>
+<div class="date_first">
+	<div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">11:00-12:00</div>
+</div>
+<div class="date_first">
+	<div class="date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+</div>
+<div class="remarks">
+	<div class="remarks_01">注：</div>
+    <div class="remarks_02"></div>
+    <div class="remarks_03">已预约</div>
+    <div class="remarks_04"></div>
+    <div class="remarks_03">可预约</div>
+    <div class="remarks_05"></div>
+    <div class="remarks_03">保留</div>
+    <div class="remarks_05">---</div>
+    <div class="remarks_03">未设置</div>
+</div>
+
+</div></div>
+
+<div class="none" id="c02">
+<div class="over">
+<div class="t_date">
+	<div class="t_date_01">01/05</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/06</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/07</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/08</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/09</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/10</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_01">01/11</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">12:00-13:00</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_03">13:00-14:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">13:00-14:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">13:00-14:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">13:00-14:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">13:00-14:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_03">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">14:00-15:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_03">14:00-15:00</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">15:00-16:00</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_01">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">16:00-17:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">16:00-17:00</div>
+</div>
+<div class="t_date_first">
+	<div class="t_date_first_01">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_01">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="t_date_first_02">17:00-18:00</div>
+    <div class="week_02">&nbsp;</div>
+</div>
+<div class="t_remarks">
+	<div class="t_remarks_01">注：</div>
+    <div class="t_remarks_02"></div>
+    <div class="t_remarks_03">已预约</div>
+    <div class="t_remarks_04"></div>
+    <div class="t_remarks_03">可预约</div>
+    <div class="t_remarks_05"></div>
+    <div class="t_remarks_03">保留</div>
+    <div class="t_remarks_05">---</div>
+    <div class="t_remarks_03">未设置</div>
+</div>
+</div></div>
+
+
+<div class="none" id="c03">
+<div class="over">
+<div class="b_date">
+	<div class="b_date_01">01/05</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/06</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/07</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/08</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/09</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/10</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_01">01/11</div>
+</div>
+<div class="b_date_first">
+	<div class="b_date_first_01">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">08:00-09:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">08:00-09:00</div>
+</div>
+<div class="b_date_first">
+	<div class="b_date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">09:00-10:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">&nbsp;&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+<div class="b_date_first">
+	<div class="b_date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">10:00-11:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_03">10:00-11:00</div>
+</div>
+<div class="b_date_first">
+	<div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">11:00-12:00</div>
+</div>
+<div class="b_date_first">
+	<div class="b_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_01">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+    <div class="b_date_first_02">12:00-13:00</div>
+    <div class="week_02">&nbsp;</div>
+</div>
+<div class="b_remarks">
+	<div class="b_remarks_01">注：</div>
+    <div class="b_remarks_02"></div>
+    <div class="b_remarks_03">已预约</div>
+    <div class="b_remarks_04"></div>
+    <div class="b_remarks_03">可预约</div>
+    <div class="b_remarks_05"></div>
+    <div class="b_remarks_03">保留</div>
+    <div class="b_remarks_05">---</div>
+    <div class="b_remarks_03">未设置</div>
+</div>
+</div></div>
+
+
+
+</div></div>
+
+<img src="images/button_Preservation.jpg" class="button">
+<script type="text/javascript">
+function scrollDoor(){
+}
+scrollDoor.prototype = {
+ sd : function(menus,divs,openClass,closeClass){
+  var _this = this;
+  if(menus.length != divs.length)
+  {
+   alert("菜单层数量和内容层数量不一样!");
+   return false;
+  }    
+  for(var i = 0 ; i < menus.length ; i++)
+  { 
+   _this.$(menus[i]).value = i;    
+   _this.$(menus[i]).onmouseover = function(){
+     
+    for(var j = 0 ; j < menus.length ; j++)
+    {      
+     _this.$(menus[j]).className = closeClass;
+     _this.$(divs[j]).style.display = "none";
+    }
+    _this.$(menus[this.value]).className = openClass; 
+    _this.$(divs[this.value]).style.display = "block";    
+   }
+  }
+  },
+ $ : function(oid){
+  if(typeof(oid) == "string")
+  return document.getElementById(oid);
+  return oid;
+ }
+}
+window.onload = function(){
+ var SDmodel = new scrollDoor();
+ SDmodel.sd(["m01","m02","m03"],["c01","c02","c03"],"sd01","sd02");
+ SDmodel.sd(["mm01","mm02","mm03"],["cc01","cc02","cc03"],"sd01","sd02");
+ SDmodel.sd(["mmm01","mmm02","mmm03"],["ccc01","ccc02","ccc03"],"sd01","sd02");
+}
+</script>
+</body>
+</html>
