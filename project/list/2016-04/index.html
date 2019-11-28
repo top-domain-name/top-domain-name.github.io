@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>百叶窗</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+</head>
+<body>
+<style>
+body{margin:0;background:black;}
+#box{background:#f4f4f4;position:fixed;top:0;right:0;bottom:0;left:0;}
+#box div{height:100%;float:left;transition:all 1s;}
+</style>
+<div id="box"></div>
+<script>
+var oBox = document.getElementById('box');
+var num = 88;
+// 执行动画图片集合
+var imgs = ['belle/1.jpg','belle/2.jpg','belle/3.jpg','belle/4.jpg','belle/5.jpg','belle/6.jpg','belle/7.jpg','belle/8.jpg','belle/9.jpg','belle/10.jpg','belle/11.jpg','belle/12.jpg'];
+// 下一张图片的index
+var imgIdx = 1;
+// 添加结构
+frameFn(oBox,num,imgs[0]);
+// 启动动画
+goAnimate();
+// 执行动画函数
+function goAnimate(){
+    var aNum = 0;
+    var timer = null;
+    timer = setInterval(function(){
+        animateFn(oBox,aNum,imgs[imgIdx]);
+        aNum++;
+        if(aNum>num){
+            clearInterval(timer);
+            imgIdx++;
+            if(imgIdx>=imgs.length){
+                imgIdx = 0;
+            }
+            setTimeout(function(){
+                goAnimate();
+            },1000);
+        }
+    },80);
+}
+/**
+ * [animateFn 动画图片转换]
+ * @param  {[type]} ele [执行动画父元素选择器]
+ * @param  {[type]} n   [当前动画元素index]
+ * @param  {[type]} url [下一张图片地址]
+ * @return {[type]}     [为动画元素添加属性]
+ */
+function animateFn(ele,n,url){
+    var items = ele.getElementsByTagName('div');
+    if(items[n-1]){
+        items[n-1].style.opacity = 1;
+    }
+    if(items[n]){
+        items[n].style.opacity = 0;
+        items[n].style.backgroundImage = 'url('+url+')';
+    }
+}
+/**
+ * [frameFn 生成固定数量的ele的子元素]
+ * @param  {[type]} ele [父元素选择器]
+ * @param  {[type]} num [分成num等份]
+ * @param  {[type]} url [默认图片地址]
+ * @return {[type]}     [固定等份的item结构]
+ */
+function frameFn(ele,num,url){
+    // 存储item
+    var str = '';
+    // 按照100份计算item宽度
+    var itemDiv = ele.offsetWidth/num;
+    // item属性设置
+    for(var i=0;i<num;i++){
+        str += '<div style="width:'+itemDiv+'px;background:url('+url+') no-repeat center;background-size:'+100*num+'%;background-position-x:'+(-itemDiv*i)+'px;"></div>';
+    }
+    ele.innerHTML = str;
+}
+</script>
+</body>
+</html>
