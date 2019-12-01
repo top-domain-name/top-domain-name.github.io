@@ -31,10 +31,10 @@
     const list=JSON.parse(localStorage.getItem('historyList')||'[]');
     app.$data.list=list;
     window.addEventListener('blur', function() {
-      onList('blur')
+      onList('离开')
     });
     window.addEventListener('focus', function() {
-      onList('focus')
+      onList('回来')
     });
     function onList(val){
       list.unshift(val)
