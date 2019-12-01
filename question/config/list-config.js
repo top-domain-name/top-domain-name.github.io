@@ -37,4 +37,10 @@ window.list_config=[{
 },{
   title:'计算机专业导论',
   link:'./2-5.html',
+},{
+  title:'检测h5离开和进入页面',
+  link:'./2-6.html',
+},{
+  title:'小说翻页核心部分',
+  link:'./2-7.html',
 }]
