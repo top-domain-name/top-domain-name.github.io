@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>离开和回来事件</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+<style>
+  #app{text-align:center;padding:16px;}
+  .history_box{text-align:left;}
+  .history_item{background:#07c160;color:#fff;height:50px;display:flex;align-items:center;margin:1px;padding:0 10%;}
+</style>
+<body>
+  <div id="app">
+    <h1>测试用户离开页面和回来页面</h1>
+    <h1>使用alert展示</h1>
+    <div class="history_box">
+      <div class="history_item" v-for="(item,index) in list" :key="index" v-text="`${list.length-index}-${item}`"></div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    const app=new Vue({
+      el:'#app',
+      data:{
+        list:[],
+      },
+    })
+    const list=JSON.parse(localStorage.getItem('historyList')||'[]');
+    app.$data.list=list;
+    window.addEventListener('blur', function() {
+      onList('blur')
+    });
+    window.addEventListener('focus', function() {
+      onList('focus')
+    });
+    function onList(val){
+      list.unshift(val)
+      app.$data.list=list;
+      localStorage.setItem('historyList',JSON.stringify(list))
+    }
+  </script>
+</body>
+</html>
