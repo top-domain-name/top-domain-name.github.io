@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
@@ -8,10 +9,26 @@
   <link rel="stylesheet" href="../base.css">
 </head>
 <style>
-  #app{text-align:center;padding:16px;}
-  .history_box{text-align:left;}
-  .history_item{background:#07c160;color:#fff;height:50px;display:flex;align-items:center;margin:1px;padding:0 10%;}
+#app {
+  text-align: center;
+  padding: 16px;
+}
+
+.history_box {
+  text-align: left;
+}
+
+.history_item {
+  background: #07c160;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 1px;
+  padding: 0 10%;
+}
 </style>
+
 <body>
   <div id="app">
     <h1>测试用户离开页面和回来页面</h1>
@@ -24,26 +41,47 @@
     </div>
   </div>
   <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
   <script>
-    const app=new Vue({
-      el:'#app',
-      data:{
-        list:[],
-      },
-    })
-    const list=JSON.parse(localStorage.getItem('historyList')||'[]');
-    app.$data.list=list;
-    window.addEventListener('blur', function() {
-      onList('离开')
-    });
-    window.addEventListener('focus', function() {
-      onList('回来')
-    });
-    function onList(val){
-      list.unshift(val)
-      app.$data.list=list;
-      localStorage.setItem('historyList',JSON.stringify(list))
+  const app = new Vue({
+    el: '#app',
+    data: {
+      list: [],
+    },
+  })
+  const list = JSON.parse(localStorage.getItem('historyList') || '[]');
+  app.$data.list = list;
+  // window.addEventListener('blur', function() {
+  //   onList('离开')
+  // });
+  // window.addEventListener('focus', function() {
+  //   onList('回来')
+  // });
+
+  var EventUtil = {
+    addHandler: function(element, type, handler) {
+      if (element.addEventListener) {
+        element.addEventListener(type, handler, false);
+      } else if (element.attachEvent) {
+        element.attachEvent("on" + type, handler);
+      } else {
+        element["on" + type] = handler;
+      }
     }
+  };
+  EventUtil.addHandler(window, "pagehide", function(event) {
+    onList('hide')
+  });
+  EventUtil.addHandler(window, "pageshow", function(event) {
+    onList('show')
+  });
+
+  function onList(val) {
+    list.unshift(val)
+    app.$data.list = list;
+    localStorage.setItem('historyList', JSON.stringify(list))
+  }
   </script>
 </body>
+
 </html>
