@@ -43,4 +43,7 @@ window.list_config=[{
 },{
   title:'小说翻页核心部分',
   link:'./2-7.html',
+},{
+  title:'金额大小写转换',
+  link:'./2-8.html',
 }]

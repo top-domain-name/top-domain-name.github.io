@@ -111,7 +111,7 @@
 			onPxTurnVw() {
 				const { turnBase } = this;
 				const result = turnBase.replace(/\d+px/img, res => {
-					const text = (parseFloat(res) / 375 * 100).toFixed(2)
+					const text = (parseFloat(res) / 1920 * 100).toFixed(2)
 					const rtn = Number(text)
 					return `${rtn}vw`;
 				})
